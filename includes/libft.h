@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/11 22:13:09 by benjamsc         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:28:49 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <limits.h>
+# include "ft_printf.h"
 
 typedef struct s_list
 {

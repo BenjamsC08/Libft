@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:57:29 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/11 20:57:31 by benjamsc         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:29:28 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (nb * n_n);
 }
-/*
-int main()
-{
-	#include <stdio.h>
-	printf("ft_atoi: %d, atoi: %d\n",ft_atoi("-+8"), atoi("-+8"));
-	printf("ft_atoi: %d, atoi: %d\n",ft_atoi("--8"), atoi("--8"));
-	printf("ft_atoi: %d, atoi: %d\n",ft_atoi("1234a56789"), atoi("1234a56789"));
-	printf("ft_atoi: %d, atoi: %d\n",ft_atoi("2147483647"), atoi("2147483647"));
-	printf("ft_atoi: %d, atoi: %d\n",ft_atoi("-2147483648"), atoi("-2147483648"));
-	printf("ft_atoi: %d, atoi: %d\n",ft_atoi("+8bit"), atoi("+8bit"));
-}*/

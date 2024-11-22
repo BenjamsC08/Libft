@@ -12,26 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_intlen(unsigned int nb)
-{
-	int	i;
-
-	i = 0;
-	if (nb == 0)
-		return (1);
-	if (nb > 2147483647)
-	{
-		i++;
-		nb = -nb;
-	}
-	while (nb > 0)
-	{
-		i++;
-		nb /= 10;
-	}
-	return (i);
-}
-
 char	*ft_itoa(int n)
 {
 	int				len_nb;
@@ -39,7 +19,7 @@ char	*ft_itoa(int n)
 	unsigned int	nbr;
 
 	nbr = n;
-	len_nb = ft_intlen(nbr);
+	len_nb = ft_intlen(nbr, 'i');
 	str_nb = (char *)ft_calloc((len_nb + 1), sizeof(char));
 	if (! str_nb)
 		return (0);
