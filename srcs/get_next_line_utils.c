@@ -5,73 +5,85 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 14:45:28 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/24 11:10:01 by benjamsc         ###   ########.fr       */
+/*   Created: 2024/12/12 20:00:14 by benjamsc          #+#    #+#             */
+/*   Updated: 2024/12/12 20:43:43 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_gnl_list	*ft_gnl_lstlast(t_gnl_list *lst)
-{
-	while (lst && lst->next)
-		lst = lst->next;
-	return (lst);
-}
-
-int	found_nwline(t_gnl_list *storage)
-{
-	t_gnl_list	*curr;
-	int			i;
-
-	if (storage == NULL)
-		return (0);
-	i = 0;
-	curr = ft_gnl_lstlast(storage);
-	while (curr->content[i])
-	{
-		if (curr->content[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-void	alloc_size_line(char **ptr_line, t_gnl_list *storage)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	len;
 
-	len = 0;
-	while (storage)
-	{
-		i = 0;
-		while (storage->content[i])
-		{
-			if (storage->content[i] == '\n')
-			{
-				len++;
-				break ;
-			}
-			len++;
-			i++;
-		}
-		storage = storage->next;
-	}
-	*ptr_line = (char *)malloc((len + 1) * sizeof(char));
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-void	free_all_storage(t_gnl_list *stash)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	t_gnl_list	*current;
-	t_gnl_list	*next;
+	char	*new;
+	char	*out;
+	char	*s_1;
+	char	*s_2;
 
-	current = stash;
-	while (current)
-	{
-		free(current->content);
-		next = current->next;
-		free(current);
-		current = next;
-	}
+	new = (char *)ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
+	if (! new)
+		return (0);
+	out = new;
+	s_1 = (char *)s1;
+	s_2 = (char *)s2;
+	while (*s_1)
+		*new++ = *s_1++;
+	while (*s_2)
+		*new++ = *s_2++;
+	*new = 0;
+	free(s1);
+	return (out);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int	i;
+	char			*ptr;
+
+	ptr = (char *)s;
+	i = -1;
+	while (++i < n)
+		ptr[i] = 0;
+	return ;
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	char			*ptr;
+
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	if (nmemb > SIZE_MAX / size)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
+}
+
+char	*ft_strdup(char *s)
+{
+	int		l_src;
+	char	*str;
+	char	*src;
+
+	l_src = ft_strlen(s);
+	str = (char *)ft_calloc((l_src + 1), sizeof(char));
+	if (! str)
+		return (0);
+	src = str;
+	while (*s)
+		*(str++) = *(s++);
+	*str = '\0';
+	return (src);
 }

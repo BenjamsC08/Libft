@@ -5,31 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 11:17:52 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/24 09:39:50 by benjamsc         ###   ########.fr       */
+/*   Created: 2024/12/12 19:46:52 by benjamsc          #+#    #+#             */
+/*   Updated: 2024/12/12 20:32:12 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 4
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
 
-# include <stdio.h>
 # include <unistd.h>
-# include <stdlib.h>
 # include <fcntl.h>
+# include <stdlib.h>
 # include <stdint.h>
 
-typedef struct s_gnl_list
-{
-	char				*content;
-	struct s_gnl_list	*next;
-}	t_gnl_list;
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(char *s);
 
-t_gnl_list		*ft_gnl_lstlast(t_gnl_list *lst);
-int				found_nwline(t_gnl_list *storage);
-void			alloc_size_line(char **ptr_line, t_gnl_list *storage);
-void			free_all_storage(t_gnl_list *stash);
+char	*get_next_line(int fd);
 
-#endif // !GET_NEXT_LINE_H
+#endif
