@@ -12,17 +12,7 @@
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	char	*new;
 	char	*out;
@@ -44,46 +34,19 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (out);
 }
 
-void	ft_bzero(void *s, size_t n)
+int	found_newline(char *str)
 {
-	unsigned int	i;
-	char			*ptr;
+	int	i;
 
-	ptr = (char *)s;
-	i = -1;
-	while (++i < n)
-		ptr[i] = 0;
-	return ;
-}
-
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	char			*ptr;
-
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	if (nmemb > SIZE_MAX / size)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
-}
-
-char	*ft_strdup(char *s)
-{
-	int		l_src;
-	char	*str;
-	char	*src;
-
-	l_src = ft_strlen(s);
-	str = (char *)ft_calloc((l_src + 1), sizeof(char));
-	if (! str)
-		return (0);
-	src = str;
-	while (*s)
-		*(str++) = *(s++);
-	*str = '\0';
-	return (src);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+		{
+			free(str);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
 }

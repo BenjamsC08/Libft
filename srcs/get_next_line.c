@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	read_file(char **buffer, int fd)
+static void	read_file(char **buffer, int fd)
 {
 	int		read_bytes;
 	char	*str;
@@ -30,14 +30,16 @@ void	read_file(char **buffer, int fd)
 			return ;
 		}
 		if (*buffer != NULL)
-			*buffer = ft_strjoin(*buffer, str);
+			*buffer = ft_strjoin_gnl(*buffer, str);
 		else
 			*buffer = ft_strdup(str);
+		if (found_newline(str))
+			return ;
 		free(str);
 	}
 }
 
-void	alloc_line(char **buffer, char **line)
+static void	alloc_line(char **buffer, char **line)
 {
 	char	*str;
 	int		len;
@@ -49,7 +51,7 @@ void	alloc_line(char **buffer, char **line)
 	*line = ft_calloc(len + 2, sizeof(char));
 }
 
-void	extract_line(char **buffer, char **line)
+static void	extract_line(char **buffer, char **line)
 {
 	char	*buff;
 	char	*str;
@@ -67,7 +69,7 @@ void	extract_line(char **buffer, char **line)
 		*str = *buff;
 }
 
-void	del_line(char **buffer)
+static void	del_line(char **buffer)
 {
 	char	*buff;
 	char	*b;
@@ -94,26 +96,26 @@ void	del_line(char **buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer = NULL;
+	static char	*buffer[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer[fd], 0) < 0)
 	{
-		if (buffer)
-			free(buffer);
-		buffer = NULL;
+		if (buffer[fd])
+			free(buffer[fd]);
+		buffer[fd] = NULL;
 		return (NULL);
 	}
-	read_file(&buffer, fd);
-	if (!buffer)
+	read_file(&buffer[fd], fd);
+	if (!buffer[fd])
 		return (NULL);
-	extract_line(&buffer, &line);
-	del_line(&buffer);
+	extract_line(&buffer[fd], &line);
+	del_line(&buffer[fd]);
 	if (line == NULL || !*line)
 	{
-		if (buffer)
-			free(buffer);
-		buffer = NULL;
+		if (buffer[fd])
+			free(buffer[fd]);
+		buffer[fd] = NULL;
 		free(line);
 		line = NULL;
 	}

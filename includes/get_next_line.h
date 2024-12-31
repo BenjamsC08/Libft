@@ -22,11 +22,8 @@
 # include <stdlib.h>
 # include <stdint.h>
 
-int		ft_strlen(char *str);
-char	*ft_strjoin(char *s1, char *s2);
-void	ft_bzero(void *s, size_t n);
-void	*ft_calloc(size_t nmemb, size_t size);
-char	*ft_strdup(char *s);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+int		found_newline(char *str);
 
 char	*get_next_line(int fd);
 
