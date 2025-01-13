@@ -16,7 +16,9 @@ char	**ft_strsdup(char **strs)
 {
 	char	**strs_c;
 	char	**strs_c_ptr;
+	int		nb_lines;
 
+	nb_lines = ft_strslen(strs);
 	strs_c = (char **)malloc((nb_lines + 1) * sizeof(char *));
 	if (!strs_c)
 		return (NULL);
