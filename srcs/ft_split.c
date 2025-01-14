@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:39:17 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/01/10 12:44:08 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:57:53 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	free_strs(char **strs)
 	i = 0;
 	if (!strs)
 		return ;
-	while (strs[i])
+	while (strs[i] != NULL)
 		free(strs[i++]);
 	free(strs);
 }
@@ -90,7 +90,7 @@ char	**ft_split(const char *str, char c)
 		if (!char_is_sep((char)*str, c))
 		{
 			*strs = ft_dup_sep((char *)str, c);
-			if (! (*strs))
+			if (!(*strs))
 				return (free_strs(strs), NULL);
 			strs++;
 			while (*str && !char_is_sep((char)*str, c))
@@ -103,32 +103,32 @@ char	**ft_split(const char *str, char c)
 	return (strs - words);
 }
 /*
-int main() 
+int	main(void)
 {
-    char *str = "^^^1^^2a,^^^^3^^^^--h^^^^";
-    char sep = '^';
+	char *str = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	char sep = '^';
 	//printf("%d",ft_count_words(str, sep));
 
-    char **result = ft_split(str, sep);
+	char **result = ft_split(str, sep);
 
 	//printf("%s\n",result[0]);
-    if (result != NULL)
+	if (result != NULL)
 	{
-        for (int i = 0; result[i] != NULL; i++)
+		for (int i = 0; result[i] != NULL; i++)
 		{
 			printf("Mot %d : %s : %p\n", i + 1, result[i], &result[i]);
-        }
+		}
 
-        for (int i = 0; result[i] != NULL; i++)
+		for (int i = 0; result[i] != NULL; i++)
 		{
-            free(result[i]);
-        }
-        free(result);
-    }
+			free(result[i]);
+		}
+		free(result);
+	}
 	else
 	{
-        printf("Erreur d'allocation mémoire pour la séparation.\n");
-    }
+		printf("Erreur d'allocation mémoire pour la séparation.\n");
+	}
 
-    return (0);
+	return (0);
 }*/
