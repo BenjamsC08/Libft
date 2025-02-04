@@ -6,13 +6,15 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/01/15 00:26:10 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/02/04 07:42:20 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "ft_boolean.h"
+# include "ft_limits.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
 # include <limits.h>
@@ -35,6 +37,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isprint(int c);
 int					ft_isascii(int c);
+int					ft_iswhitespace(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 
@@ -58,6 +61,8 @@ void				free_strs(char **strs);
 int					ft_count_words(char *str, char c);
 char				*ft_itoa(int n);
 char				*ft_strtrim(char const *s1, char const *set);
+char				*ft_strstr(char *str, char *to_find);
+char				*ft_strcasestr(char *str, char *to_find);
 
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
@@ -87,5 +92,8 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 t_list				*ft_lstpenultimate(t_list *lst);
+
+int					ft_pow(unsigned int nb, unsigned int power);
+void				ft_abs(int *nb);
 
 #endif
