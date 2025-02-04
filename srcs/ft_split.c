@@ -78,11 +78,13 @@ void	free_strs(char **strs)
 char	**ft_split(const char *str, char c)
 {
 	char		**strs;
+	char		**s_strs;
 	const int	words = ft_count_words((char *)str, c);
 
 	if (!str)
 		return (NULL);
-	strs = malloc((words + 1) * sizeof(char *));
+	strs = ft_calloc((words + 1), sizeof(char *));
+	s_strs = strs;
 	if (!strs)
 		return (NULL);
 	while (*str)
@@ -91,7 +93,7 @@ char	**ft_split(const char *str, char c)
 		{
 			*strs = ft_dup_sep((char *)str, c);
 			if (!(*strs))
-				return (free_strs(strs), NULL);
+				return (free_strs(s_strs), NULL);
 			strs++;
 			while (*str && !char_is_sep((char)*str, c))
 				str++;
@@ -99,13 +101,12 @@ char	**ft_split(const char *str, char c)
 		else
 			str++;
 	}
-	*strs = NULL;
-	return (strs - words);
+	return (s_strs);
 }
 /*
 int	main(void)
 {
-	char *str = "^^^1^^2a,^^^^3^^^^--h^^^^";
+	char *str = "";
 	char sep = '^';
 	//printf("%d",ft_count_words(str, sep));
 
@@ -131,4 +132,5 @@ int	main(void)
 	}
 
 	return (0);
-}*/
+}
+*/
