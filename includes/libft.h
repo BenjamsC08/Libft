@@ -26,6 +26,10 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+unsigned char		ft_reverse_bits(unsigned char octet);
+unsigned char		ft_swap_bits(unsigned char octet);
+void				ft_print_bits(unsigned char octet);
+
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
