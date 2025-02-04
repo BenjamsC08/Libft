@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/02/04 07:42:20 by moa              ###   ########.fr       */
+/*   Updated: 2025/02/04 07:58:43 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char				*ft_strcasestr(char *str, char *to_find);
 
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+char				*ft_strrev(char *str);
 
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
@@ -93,7 +94,13 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 t_list				*ft_lstpenultimate(t_list *lst);
 
+int					*ft_range(int min, int max);
+int					*ft_rrange(int start, int end);
+
 int					ft_pow(unsigned int nb, unsigned int power);
 void				ft_abs(int *nb);
+int					ft_factorial(int nb);
+int					ft_isprime(int nb);
+int					ft_next_prime(int nb);
 
 #endif
