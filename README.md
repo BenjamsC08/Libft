@@ -5,7 +5,7 @@
 ### Objectif
 Créer notre propre bibliothèque de fonctions.
 
-C’est sans doute l’un de mes projets préférés à ce jour, tant il est pratique et formateur. Il m’a permis de m’initier à des concepts intéressants, comme les listes chaînées. J’y ai également intégré des éléments du cursus, tels que mon **get_next_line** et mon **ft_printf**, qui enrichissent encore son utilité. Je continue de le mettre à jour, et à l’heure où j’écris ces lignes, il s’avère très utile dans le cursus **42**. De plus, étant tombé amoureux du **C**, j’utilise cette bibliothèque même dans mes projets personnels impliquant ce langage.
+C’est sans doute l’un de mes projets préférés à ce jour, tant il est pratique et formateur. Il m’a permis de m’initier à des concepts intéressants, comme les listes chaînées. J’y ai également intégré des éléments du cursus de 42, tels que mon **get_next_line** et mon **ft_printf**, qui enrichissent encore son utilité. Je continue de le mettre à jour, et à l’heure où j’écris ces lignes, il s’avère très utile dans le cursus **42**. De plus, étant tombé amoureux du **C**, j’utilise cette bibliothèque même dans mes projets personnels impliquant ce langage.
 
 ---
 
