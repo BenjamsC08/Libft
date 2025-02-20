@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-void	ft_abs(int *nb)
+int	ft_abs(int nb)
 {
-	if (*nb < 0)
-		*nb *= -1;
-	return ;
+	if (nb < 0)
+		return (nb * -1);
+	return (nb) ;
 }
