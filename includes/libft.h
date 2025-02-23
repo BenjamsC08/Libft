@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/02/04 07:58:43 by moa              ###   ########.fr       */
+/*   Updated: 2025/02/23 03:47:22 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,12 @@ t_list				*ft_lstpenultimate(t_list *lst);
 int					*ft_range(int min, int max);
 int					*ft_rrange(int start, int end);
 
-int					ft_pow(unsigned int nb, unsigned int power);
-void				ft_abs(int *nb);
-int					ft_factorial(int nb);
+int					ft_abs(int nb);
 int					ft_isprime(int nb);
 int					ft_next_prime(int nb);
+int					ft_min(int nb1, int nb2);
+int					ft_max(int nb1, int nb2);
+int					*ft_mintab(int *tab, unsigned int size);
+int					*ft_maxtab(int *tab, unsigned int size);
 
 #endif

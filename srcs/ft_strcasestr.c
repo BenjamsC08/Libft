@@ -32,8 +32,6 @@ static int	ft_check_tf(char *s, char *tf)
 
 static void	ft_alloc_and_lower(char *str, char *to_find, char **s, char **tf)
 {
-	char	*s1_min;
-	char	*s2_min;
 	int		i;
 
 	*s = ft_calloc(sizeof(char), (ft_strlen(str) + 1));
