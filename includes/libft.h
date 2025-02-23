@@ -29,6 +29,7 @@ typedef struct s_list
 }					t_list;
 
 unsigned char		ft_reverse_bits(unsigned char octet);
+unsigned int		ft_reverse_octets(unsigned int octets);
 unsigned char		ft_swap_bits(unsigned char octet);
 void				ft_print_bits(unsigned char octet);
 

@@ -18,6 +18,7 @@ unsigned char	ft_reverse_bits(unsigned char octet)
 	unsigned char	tmp;
 
 	i = -1;
+	tmp = 0;
 	while (++i < 8)
 	{
 		tmp <<= 1;
@@ -25,6 +26,24 @@ unsigned char	ft_reverse_bits(unsigned char octet)
 		octet >>= 1;
 	}
 	return (tmp);
+}
+
+unsigned int ft_reverse_octets(unsigned int octets)
+{
+    unsigned int result;
+	unsigned char current;
+	unsigned char reversed;
+    int i;
+
+	result = 0;
+	i = -1;
+    while (++i < 4)
+    {
+        current = (octets >> (8 * i)) & 0xFF;
+        reversed = ft_reverse_bits(current);
+        result |= (unsigned int)reversed << (8 * (3 - i));
+    }
+    return (result);
 }
 /**/
 /*#include <stdio.h>*/
