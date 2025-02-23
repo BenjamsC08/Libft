@@ -29,13 +29,15 @@ void	ft_print_bits(unsigned char octet)
 		octet >>= 1;
 	}
 }
-/**/
-/*#include <stdio.h>*/
-/**/
-/*int	main(int argc, char **argv)*/
-/*{*/
-/*	int	nb;*/
-/**/
-/*	nb = ft_atoi(argv[1]);*/
-/*	ft_print_bits(nb);*/
-/*}*/
+
+void	ft_print_octets(unsigned int octets)
+{
+	unsigned char	current;
+
+	i = -1;
+	while (++i < 4)
+	{
+		current = (octets >> (8 * i)) & 0xFF;
+		ft_print_bits(current);
+	}
+}
