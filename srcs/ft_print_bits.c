@@ -33,6 +33,7 @@ void	ft_print_bits(unsigned char octet)
 void	ft_print_octets(unsigned int octets)
 {
 	unsigned char	current;
+	int				i;
 
 	i = -1;
 	while (++i < 4)
