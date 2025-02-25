@@ -29,3 +29,21 @@ int	ft_intlen(unsigned int nb, char type)
 	}
 	return (i);
 }
+
+int	ft_lintlen(long unsigned int nb, char type)
+{
+	int	i;
+
+	i = 0;
+	if (type != 'u' && nb > LONG_MAX)
+	{
+		i++;
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		i++;
+		nb /= 10;
+	}
+	return (i);
+}
