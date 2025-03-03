@@ -15,7 +15,7 @@ C’est sans doute l’un de mes projets préférés à ce jour, tant il est pra
 
 ---
 
-## <a name="#explanation-en"></a>🇬🇧 Explanation
+## <a name="explanation-en"></a>🇬🇧 Explanation
 
 ### Objective
 Create our own function library.
