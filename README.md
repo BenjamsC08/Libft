@@ -1,6 +1,16 @@
-# Libft
+<h1 align="center">Libft</h1>
 
-## 🇫🇷 Explication
+<p align="center">
+  <a href="#explication-fr">🇫🇷</a> | <a href="#explanation-en">🇬🇧</a>
+</p>
+
+<p align="center">
+  <img src="https://github.com/BenjamsC08/so_long/blob/main/.ressources_git/so_long_1.gif" alt="GIF du projet So_Long">
+</p>
+
+---
+
+## <a name="explication-fr"></a>🇫🇷 Explication
 
 ### Objectif
 Créer notre propre bibliothèque de fonctions.
@@ -9,7 +19,7 @@ C’est sans doute l’un de mes projets préférés à ce jour, tant il est pra
 
 ---
 
-## 🇬🇧 Explanation
+## <a name="#explanation-en"></a>🇬🇧 Explanation
 
 ### Objective
 Create our own function library.
