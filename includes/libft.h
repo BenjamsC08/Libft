@@ -17,16 +17,9 @@
 # include "ft_limits.h"
 # include "ft_printf.h"
 # include "get_next_line.h"
-/*# include <limits.h>*/
-/*# include <stdint.h>*/
+# include "ft_def.h"
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 /*
  *			bit manip
@@ -84,6 +77,7 @@ double				ft_atol(const char *nptr);
 char				*ft_strdup(const char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strfjoin(char *src, char *dest);
 int					ft_count_words(char *str, char c);
 char				*ft_itoa(int n);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -144,6 +138,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-t_list				*ft_lstpenultimate(t_list *lst);
 
 #endif

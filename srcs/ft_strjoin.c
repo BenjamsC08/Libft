@@ -32,10 +32,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	*new = 0;
 	return (out);
 }
-/*
-int main()
+
+char	*ft_strfjoin(char *src, char *dest)
 {
-	#include <stdio.h>
-	char *s = ft_strjoin("i love ", "42");
-	printf("%s\n",s);
-}*/
+	char	*new;
+	char	*out;
+	char	*s_1;
+	char	*s_2;
+
+	new = (char *)malloc((ft_strlen(src) + ft_strlen(dest) + 1) * sizeof(char));
+	if (! new)
+		return (0);
+	out = new;
+	s_1 = (char *)src;
+	s_2 = (char *)dest;
+	while (*s_1)
+		*new++ = *s_1++;
+	while (*s_2)
+		*new++ = *s_2++;
+	*new = 0;
+	free(src);
+	return (out);
+}
