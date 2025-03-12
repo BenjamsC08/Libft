@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@email.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 23:35:29 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/22 23:36:31 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/12 20:03:02 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_put_char_int(char c)
 
 int	ft_put_str_int(char *str)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (!str)

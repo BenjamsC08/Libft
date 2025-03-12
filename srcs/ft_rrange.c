@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moa <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 06:21:23 by moa               #+#    #+#             */
-/*   Updated: 2025/02/24 00:07:27 by benjamsc         ###   ########.fr       */
+/*   Created: 2025/02/04 07:50:26 by moa               #+#    #+#             */
+/*   Updated: 2025/02/04 07:52:53 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_abs(int nb)
+int	*ft_rrange(int start, int end)
 {
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
+	int	*tab;
+	int	len;
+
+	if (end >= start)
+		len = end - start + 1;
+	else
+		len = start - end + 1;
+	tab = (int *)malloc(sizeof(int) * len);
+	if (!tab)
+		return (NULL);
+	if (end >= start)
+	{
+		while (len--)
+		{
+			tab[len] = start++;
+		}
+	}
+	else
+	{
+		while (len--)
+		{
+			tab[len] = start--;
+		}
+	}
+	return (tab);
 }

@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moa <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 06:21:23 by moa               #+#    #+#             */
-/*   Updated: 2025/02/24 00:07:27 by benjamsc         ###   ########.fr       */
+/*   Created: 2025/02/04 07:48:20 by moa               #+#    #+#             */
+/*   Updated: 2025/02/04 07:48:28 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_abs(int nb)
+int	*ft_range(int min, int max)
 {
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
+	int	*tab;
+	int	i;
+
+	if (min >= max)
+		return (NULL);
+	tab = (int *)malloc(sizeof(*tab) * (max - min));
+	i = 0;
+	while (min < max)
+	{
+		tab[i] = min;
+		i++;
+		min++;
+	}
+	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:09:17 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/13 18:32:03 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/04 09:01:47 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,22 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+
+int	ft_only_digit(char *str)
+{
+	char	*src;
+
+	src = str;
+	while (*src)
+	{
+		if (!ft_isdigit(*src))
+			return (0);
+	}
+	return (1);
+}
+
 /*
-int main()
+int	main(void)
 {
 	if (ft_isalnum('8'))
 		printf("ok\n");

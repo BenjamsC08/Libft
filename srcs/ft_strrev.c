@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moa <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 06:21:23 by moa               #+#    #+#             */
-/*   Updated: 2025/02/24 00:07:27 by benjamsc         ###   ########.fr       */
+/*   Created: 2025/02/04 07:46:13 by moa               #+#    #+#             */
+/*   Updated: 2025/02/04 07:48:05 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_abs(int nb)
+char	*ft_strrev(char *str)
 {
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
+	int		count;
+	int		i;
+	char	c;
+
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	count = count - 1;
+	i = 0;
+	while (i < ((count + 1) / 2))
+	{
+		c = str[i];
+		str[i] = str[count - i];
+		str[count - i] = c;
+		i++;
+	}
+	return (str);
 }

@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moa <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 21:10:17 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/04 09:02:17 by benjamsc         ###   ########.fr       */
+/*   Created: 2025/02/04 07:54:15 by moa               #+#    #+#             */
+/*   Updated: 2025/02/04 07:56:23 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isprint(int c)
+int	ft_isprime(int nb)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
-}
+	int	i;
 
-int	ft_only_print(char *str)
-{
-	char	*src;
-
-	src = str;
-	while (*src)
+	if (nb <= 1)
+		return (0);
+	i = 2;
+	while (i <= nb / i)
 	{
-		if (!ft_isprint(*src))
+		if (nb % i == 0)
 			return (0);
+		i++;
 	}
 	return (1);
 }
 
-/*
-int	main(void)
+int	ft_next_prime(int nb)
 {
-	if (ft_isalnum(68))
-		printf("ok\n");
-	else
-		printf("nok\n");
-}*/
+	while (ft_isprime(nb) == 0)
+		nb++;
+	return (nb);
+}
