@@ -6,13 +6,13 @@
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 20:02:03 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/12 20:34:43 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/12 21:05:04 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	parse_format(va_list list, char type)
+static int	parse_format(int fd, va_list list, char type)
 {
 	int	len;
 
@@ -29,6 +29,8 @@ static int	parse_format(va_list list, char type)
 		len += ft_put_uint_int_fd(fd, va_arg(list, unsigned int));
 	if (type == 'x' || type == 'X')
 		len += ft_put_hex_int_fd(fd, va_arg(list, unsigned int), type);
+	if (type == 'l')
+		len += ft_put_long_int_fd(fd, va_arg(list, long int));
 	if (type == '%')
 		len += ft_put_char_int_fd(fd, '%');
 	return (len);

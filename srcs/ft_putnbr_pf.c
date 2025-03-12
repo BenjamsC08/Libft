@@ -84,3 +84,22 @@ int	ft_put_ptr_int(unsigned long nbr)
 	free(s);
 	return (len + 2);
 }
+
+int	ft_put_long_int(long int nb)
+{
+	char	*s;
+	char	*s1;
+	int		len;
+
+	if (nb == 0)
+		return (ft_put_char_int('0'));
+	s1 = ft_ltoa(nb);
+	if (!s1)
+		return (0);
+	s = s1;
+	while (*s1)
+		write(1, (s1++), 1);
+	len = ft_strlen(s);
+	free(s);
+	return (len);
+}

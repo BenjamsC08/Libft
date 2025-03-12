@@ -22,56 +22,124 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+
 /*
  *			bit manip
  */
-unsigned char	ft_reverse_bits(unsigned char octet);
-unsigned int	ft_reverse_octets(unsigned int octets);
-unsigned char	ft_swap_bits(unsigned char octet);
-unsigned int	ft_swap_octets(unsigned int octets);
-void			ft_print_bits(unsigned char octet);
-void			ft_print_octets(unsigned int octets);
+unsigned char		ft_reverse_bits(unsigned char octet);
+unsigned int		ft_reverse_octets(unsigned int octets);
+unsigned char		ft_swap_bits(unsigned char octet);
+unsigned int		ft_swap_octets(unsigned int octets);
+void				ft_print_bits(unsigned char octet);
+void				ft_print_octets(unsigned int octets);
 //		booltab and array whit an int
-void			bit_set(t_booltab *tab, unsigned int pos);
-void			bit_clear(t_booltab *tab, unsigned int pos);
-unsigned int	bit_get(t_booltab tab, unsigned int pos);
-void			bit_toggle(t_booltab *tab, unsigned int pos);
-void			ba_set(t_boolarray *arr, unsigned int pos);
-void			ba_clear(t_boolarray *arr, unsigned int pos);
-unsigned int	ba_get(t_boolarray arr, unsigned int pos);
-void			ba_toggle(t_boolarray *arr, unsigned int pos);
-t_boolarray		create_bool_array(unsigned int num_bits);
-void			free_bool_array(t_boolarray *arr);
+void				bit_set(t_booltab *tab, unsigned int pos);
+void				bit_clear(t_booltab *tab, unsigned int pos);
+unsigned int		bit_get(t_booltab tab, unsigned int pos);
+void				bit_toggle(t_booltab *tab, unsigned int pos);
+void				ba_set(t_boolarray *arr, unsigned int pos);
+void				ba_clear(t_boolarray *arr, unsigned int pos);
+unsigned int		ba_get(t_boolarray arr, unsigned int pos);
+void				ba_toggle(t_boolarray *arr, unsigned int pos);
+t_boolarray			create_bool_array(unsigned int num_bits);
+void				free_bool_array(t_boolarray *arr);
 /*
  *			char verification
  */
-int				ft_isalpha(int c);
-int				ft_isdigit(int c);
-int				ft_isalnum(int c);
-int				ft_isprint(int c);
-int				ft_isascii(int c);
-int				ft_iswhitespace(int c);
-int				ft_tolower(int c);
-int				ft_toupper(int c);
+int					ft_isalpha(int c);
+int					ft_isdigit(int c);
+int					ft_isalnum(int c);
+int					ft_isprint(int c);
+int					ft_isascii(int c);
+int					ft_iswhitespace(int c);
+int					ft_tolower(int c);
+int					ft_toupper(int c);
 /*
  *			string verification
  */
-int				ft_only_alnum(char *str);
-int				ft_only_alpha(char *str);
-int				ft_only_ascii(char *str);
-int				ft_only_digit(char *str);
-int				ft_only_print(char *str);
-int				ft_only_whitespace(char *str);
+int					ft_only_alnum(char *str);
+int					ft_only_alpha(char *str);
+int					ft_only_ascii(char *str);
+int					ft_only_digit(char *str);
+int					ft_only_print(char *str);
+int					ft_only_whitespace(char *str);
 /*
  *			string manip
  */
-size_t			ft_strlen(const char *str);
-char			*ft_strchr(const char *s, int c);
-char			*ft_strrchr(const char *s, int c);
-int				ft_strncmp(const char *s1, const char *s2, size_t n);
-char			*ft_strnstr(const char *big, const char *little, size_t len);
-size_t			ft_strlcat(char *dst, const char *src, size_t siz);
-size_t			ft_strlcpy(char *dst, const char *src, size_t siz);
-int				ft_atoi(const char *nptr);
-double			ft_atol(const char *nptr);
-char			*ft_strdup(const char *s);
+size_t				ft_strlen(const char *str);
+char				*ft_strchr(const char *s, int c);
+char				*ft_strrchr(const char *s, int c);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+char				*ft_strnstr(const char *big, const char *little,
+						size_t len);
+size_t				ft_strlcat(char *dst, const char *src, size_t siz);
+size_t				ft_strlcpy(char *dst, const char *src, size_t siz);
+int					ft_atoi(const char *nptr);
+double				ft_atol(const char *nptr);
+char				*ft_strdup(const char *s);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strfjoin(char *src, char *dest);
+int					ft_count_words(char *str, char c);
+char				*ft_itoa(int n);
+char				*ft_strtrim(char const *s1, char const *set);
+char				*ft_strstr(char *str, char *to_find);
+char				*ft_strcasestr(char *str, char *to_find);
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+char				*ft_strrev(char *str);
+/*
+ *			tab string manip
+ */
+int					ft_strslen(char **strs);
+char				**ft_strsdup(char **strs);
+char				**ft_split(const char *str, char c);
+void				free_strs(char **strs);
+/*
+ *			memory manip
+ */
+void				ft_bzero(void *s, size_t n);
+void				*ft_memset(void *s, int c, size_t n);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
+void				*ft_memmove(void *dest, const void *src, size_t n);
+void				*ft_memchr(const void *s, int c, size_t n);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
+void				*ft_calloc(size_t nmemb, size_t size);
+/*
+ *			int verification
+ */
+int					ft_abs(int nb);
+int					ft_isprime(int nb);
+int					ft_next_prime(int nb);
+int					ft_min(int nb1, int nb2);
+int					ft_max(int nb1, int nb2);
+/*
+ *			int tab manip
+ */
+int					*ft_range(int min, int max);
+int					*ft_rrange(int start, int end);
+int					*ft_mintab(int *tab, unsigned int size);
+int					*ft_maxtab(int *tab, unsigned int size);
+/*
+ *			file manip
+ */
+void				ft_putchar_fd(char c, int fd);
+void				ft_putstr_fd(char *s, int fd);
+void				ft_putendl_fd(char *s, int fd);
+void				ft_putnbr_fd(int n, int fd);
+/*
+ *			list manip
+ */
+t_list				*ft_lstnew(void *content);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
+
+#endif
+
