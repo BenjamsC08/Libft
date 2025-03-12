@@ -23,7 +23,8 @@ re: fclean all
 
 listC:
 	@find -wholename "./srcs/*.c" | cut -c 3- | tr '\n' ' '
-
+listNb:
+	@find -wholename "./srcs/*.c" | wc -l
 .PHONY: all clean fclean re bonus compL
 
 
