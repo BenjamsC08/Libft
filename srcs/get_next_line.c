@@ -49,6 +49,8 @@ static void	alloc_line(char **buffer, char **line)
 	while (str[len] && str[len] != '\n')
 		len++;
 	*line = ft_calloc(len + 2, sizeof(char));
+	if (!*line)
+		return ;
 }
 
 static void	extract_line(char **buffer, char **line)
@@ -60,6 +62,8 @@ static void	extract_line(char **buffer, char **line)
 		return ;
 	buff = *buffer;
 	alloc_line(buffer, line);
+	if (!*line)
+		return ;
 	str = *line;
 	if (!str)
 		return ;
@@ -99,6 +103,7 @@ char	*get_next_line(int fd)
 	static char	*buffer[1024];
 	char		*line;
 
+	line = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, buffer[fd], 0) < 0)
 	{
 		if (buffer[fd])

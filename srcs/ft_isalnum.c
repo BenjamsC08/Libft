@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 18:21:12 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/04 09:00:44 by benjamsc         ###   ########.fr       */
+/*   Updated: 2024/11/13 18:30:41 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,8 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-int	ft_only_alnum(char *str)
-{
-	char	*src;
-
-	src = str;
-	while (*src)
-	{
-		if (!ft_isalnum(*src))
-			return (0);
-	}
-	return (1);
-}
-
 /*
-int	main(void)
+int main()
 {
 	if (ft_isalnum(68))
 		printf("ok\n");

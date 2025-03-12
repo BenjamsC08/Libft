@@ -54,3 +54,11 @@ char	*ft_strfjoin(char *src, char *dest)
 	free(src);
 	return (out);
 }
+
+/*
+int main()
+{
+	#include <stdio.h>
+	char *s = ft_strjoin("i love ", "42");
+	printf("%s\n",s);
+}*/

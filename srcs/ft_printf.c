@@ -29,8 +29,6 @@ static int	parse_format(va_list list, char type)
 		len += ft_put_uint_int(va_arg(list, unsigned int));
 	if (type == 'x' || type == 'X')
 		len += ft_put_hex_int(va_arg(list, unsigned int), type);
-	if (type == 'l')
-		len += ft_put_long_int(va_arg(list, long int));
 	if (type == '%')
 		len += ft_put_char_int('%');
 	return (len);

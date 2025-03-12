@@ -5,62 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 03:38:40 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/02/23 03:48:27 by benjamsc         ###   ########.fr       */
+/*   Created: 2025/03/05 10:22:33 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/03/05 10:22:34 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_min(int nb1, int nb2)
+int	ft_min(int a, int b)
 {
-	if (nb1 < nb2)
-		return (nb1);
-	return (nb2);
+	if (a < b)
+		return (a);
+	return (b);
 }
 
-int	ft_max(int nb1, int nb2)
+int	ft_max(int a, int b)
 {
-	if (nb1 < nb2)
-		return (nb2);
-	return (nb1);
-}
-
-int	*ft_mintab(int *tab, unsigned int size)
-{
-	unsigned int	i;
-	int				out;
-	int				temp;
-
-	i = -1;
-	temp = INT_MAX;
-	out = 0;
-	while (++i < size)
-	{
-		if (tab[i] < temp)
-		{
-			temp = tab[i];
-			out = i;
-		}
-	}
-	return (&tab[out]);
-}
-
-int	*ft_maxtab(int *tab, unsigned int size)
-{
-	unsigned int	i;
-	int				out;
-	int				temp;
-
-	i = -1;
-	temp = INT_MIN;
-	while (++i < size)
-	{
-		if (tab[i] > temp)
-		{
-			temp = tab[i];
-			out = i;
-		}
-	}
-	return (&tab[out]);
+	if (a < b)
+		return (b);
+	return (a);
 }
