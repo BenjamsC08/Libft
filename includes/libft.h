@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/13 06:43:15 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/13 07:29:23 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strfjoin(char *src, char *dest);
-int				ft_count_words(char *str, char c);
+/*int				ft_count_words(char *str, char c);*/
 char			*ft_itoa(int n);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strstr(char *str, char *to_find);
