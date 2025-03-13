@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:39:17 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/01/14 14:57:53 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/13 06:59:25 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,13 @@ void	free_strs(char **strs)
 char	**ft_split(const char *str, char c)
 {
 	char		**strs;
+	char		**s_strs;
 	const int	words = ft_count_words((char *)str, c);
 
 	if (!str)
 		return (NULL);
-	strs = malloc((words + 1) * sizeof(char *));
+	strs = ft_calloc((words + 1), sizeof(char *));
+	s_strs = strs;
 	if (!strs)
 		return (NULL);
 	while (*str)
@@ -91,7 +93,7 @@ char	**ft_split(const char *str, char c)
 		{
 			*strs = ft_dup_sep((char *)str, c);
 			if (!(*strs))
-				return (free_strs(strs), NULL);
+				return (free_strs(s_strs), NULL);
 			strs++;
 			while (*str && !char_is_sep((char)*str, c))
 				str++;
@@ -99,8 +101,7 @@ char	**ft_split(const char *str, char c)
 		else
 			str++;
 	}
-	*strs = NULL;
-	return (strs - words);
+	return (s_strs);
 }
 /*
 int	main(void)

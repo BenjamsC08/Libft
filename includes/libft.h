@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/13 05:19:47 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/13 06:43:15 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int				ft_only_digit(char *str);
 int				ft_only_print(char *str);
 int				ft_only_whitespace(char *str);
 /*
- *			string manip
+ *			string manip ajouter strsiteri
  */
 size_t			ft_strlen(const char *str);
 char			*ft_strchr(const char *s, int c);
