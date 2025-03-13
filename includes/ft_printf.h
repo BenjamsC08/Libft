@@ -18,6 +18,7 @@
 # include <unistd.h>
 
 int		ft_intlen(unsigned int nb, char type);
+int		ft_lintlen(long unsigned int nb, char type);
 int		ft_xlen(unsigned long nbr);
 
 char	*ft_itoa(int n);
