@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/13 07:29:23 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/13 10:10:19 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int				ft_strslen(char **strs);
 char			**ft_strsdup(char **strs);
 char			**ft_split(const char *str, char c);
 void			free_strs(char **strs);
+char			**ft_strsfjoin(char **src, char *dest);
 /*
  *			memory manip
  */
