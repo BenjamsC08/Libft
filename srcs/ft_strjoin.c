@@ -55,7 +55,7 @@ char	*ft_strfjoin(char *src, char *dest)
 	return (out);
 }
 
-char	**ft_strsfjoin(char **src, char *dest)
+char	**ft_strsfjoin(char **src, char *add)
 {
 	char	**new;
 	char	**out;
@@ -67,7 +67,7 @@ char	**ft_strsfjoin(char **src, char *dest)
 		return (NULL);
 	out = new;
 	s_1 = src;
-	s_2 = dest;
+	s_2 = add;
 	while (*s_1)
 	{
 		*new = ft_strdup(*s_1++);
@@ -80,4 +80,18 @@ char	**ft_strsfjoin(char **src, char *dest)
 	if (!*new)
 		return (free_strs(out), NULL);
 	return (free_strs(src), out);
+}
+
+char	**ft_strsmerge(char **s1, char **s2)
+{
+	char	**new;
+
+	new = ft_strsdup(s1);
+	while (*s2)
+	{
+		new = ft_strsfjoin(new, *s2);
+		s2++;
+	}
+	free_strs(s1);
+	return (new);
 }

@@ -78,6 +78,7 @@ char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strfjoin(char *src, char *dest);
+char			**ft_strsmerge(char **s1, char **s2);
 /*int				ft_count_words(char *str, char c);*/
 char			*ft_itoa(int n);
 char			*ft_strtrim(char const *s1, char const *set);
