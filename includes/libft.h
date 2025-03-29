@@ -93,6 +93,7 @@ char			*ft_strrev(char *str);
 int				ft_strslen(char **strs);
 char			**ft_strsdup(char **strs);
 char			**ft_split(const char *str, char c);
+char			*ft_unsplit(char **strs, char c);
 void			free_strs(char **strs);
 char			**ft_strsfjoin(char **src, char *dest);
 /*

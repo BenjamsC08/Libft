@@ -14,15 +14,10 @@
 
 int	ft_strslen(char **strs)
 {
-	int	i;
 	int	j;
 
-	j = -1;
-	while (strs[++j])
-	{
-		i = 0;
-		while (strs[i])
-			i++;
-	}
+	j = 0;
+	while (strs[j])
+		j++;
 	return (j);
 }
