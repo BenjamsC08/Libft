@@ -6,7 +6,7 @@
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 02:12:12 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/13 05:19:43 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/03/29 17:42:40 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 # define PINK "\033[0;95m"
 # define TEAL "\033[0;96m"
 # define GRAY "\033[0;90m"
-
 
 typedef struct s_list
 {
