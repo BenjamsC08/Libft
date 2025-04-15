@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/29 17:44:25 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/04/15 08:06:13 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ char			*ft_strcasestr(char *str, char *to_find);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strrev(char *str);
+char			*ft_cut(char from, char *str, int l);
 /*
  *			tab string manip
  */

@@ -30,6 +30,9 @@
 # define TEAL "\033[0;96m"
 # define GRAY "\033[0;90m"
 
+# define START 'S'
+# define END 'E'
+
 typedef struct s_list
 {
 	void			*content;

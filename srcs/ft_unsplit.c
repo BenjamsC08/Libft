@@ -6,7 +6,7 @@
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 15:06:20 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/29 17:42:28 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/04/15 08:05:19 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static char	*join_help(char *s, char *sep, char *end)
 
 char	*ft_unsplit_skip(char **strs, char c, int k)
 {
-	static int		i = 0;
-	char	*s;
-	char	*sep;
+	static int	i = 0;
+	char		*s;
+	char		*sep;
 
 	if (!*strs || !strs)
 		return (NULL);
