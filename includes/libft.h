@@ -78,7 +78,6 @@ char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strfjoin(char *src, char *dest);
-char			**ft_strsmerge(char **s1, char **s2);
 char			*ft_str_add_char(char *str, char c);
 /*int				ft_count_words(char *str, char c);*/
 char			*ft_itoa(int n);
@@ -98,7 +97,8 @@ char			**ft_split(const char *str, char c);
 char			*ft_unsplit(char **strs, char c);
 char			*ft_unsplit_skip(char **strs, char c, int k);
 void			free_strs(char **strs);
-char			**ft_strsfjoin(char **src, char *dest);
+char			**ft_strsfadd(char **src, char *add);
+char			**ft_strsfjoin(char **s1, char **s2);
 void			print_strs(char **strs);
 /*
  *			memory manip

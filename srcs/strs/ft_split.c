@@ -54,7 +54,7 @@ static char	*ft_dup_sep(char *src, char c)
 	i = -1;
 	while (src[l_src] && !char_is_sep(src[l_src], c))
 		l_src++;
-	str = (char *)ft_calloc((l_src + 1) * sizeof(char));
+	str = (char *)ft_calloc((l_src + 1), sizeof(char));
 	if (!str)
 		return (NULL);
 	while ((++i) < l_src)

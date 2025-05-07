@@ -20,7 +20,7 @@ char	*ft_utoa(unsigned int n)
 
 	nbr = n;
 	len = ft_intlen(nbr, 'u');
-	str = (char *)ft_calloc(len + 1);
+	str = (char *)ft_calloc(len + 1, sizeof(char));
 	if (! str)
 		return (0);
 	*(str + len) = 0;

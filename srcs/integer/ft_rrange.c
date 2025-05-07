@@ -21,7 +21,7 @@ int	*ft_rrange(int start, int end)
 		len = end - start + 1;
 	else
 		len = start - end + 1;
-	tab = (int *)ft_calloc(sizeof(int) * len);
+	tab = (int *)ft_calloc(sizeof(int), len);
 	if (!tab)
 		return (NULL);
 	if (end >= start)

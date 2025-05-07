@@ -19,7 +19,7 @@ int	*ft_range(int min, int max)
 
 	if (min >= max)
 		return (NULL);
-	tab = (int *)ft_calloc(sizeof(*tab) * (max - min));
+	tab = (int *)ft_calloc(sizeof(*tab), (max - min));
 	i = 0;
 	while (min < max)
 	{

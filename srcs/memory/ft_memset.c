@@ -21,7 +21,7 @@ void	*ft_memset(void *addr, int c, size_t n)
 	i = -1;
 	while (++i < n)
 		ptr[i] = (char)c;
-	return (s);
+	return (addr);
 }
 /*
 #include <string.h>
