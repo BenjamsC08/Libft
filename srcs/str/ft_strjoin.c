@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*s_1;
 	char	*s_2;
 
-	new = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	new = (char *)ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!new)
 		return (0);
 	out = new;
@@ -40,7 +40,7 @@ char	*ft_strfjoin(char *src, char *dest)
 	char	*s_1;
 	char	*s_2;
 
-	new = (char *)malloc((ft_strlen(src) + ft_strlen(dest) + 1) * sizeof(char));
+	new = (char *)ft_calloc((ft_strlen(src) + ft_strlen(dest) + 1) * sizeof(char));
 	if (!new)
 		return (0);
 	out = new;
@@ -54,5 +54,3 @@ char	*ft_strfjoin(char *src, char *dest)
 	free(src);
 	return (out);
 }
-
-

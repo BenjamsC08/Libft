@@ -22,7 +22,7 @@ char	*ft_xtoa(unsigned long nbr, char type)
 	if (type == 'X')
 		base = "0123456789ABCDEF";
 	len = ft_xlen(nbr);
-	str = (char *)malloc(len + 1);
+	str = (char *)ft_calloc(len + 1);
 	if (!str)
 		return (0);
 	*(str + len) = 0;
