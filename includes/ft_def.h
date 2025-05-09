@@ -39,4 +39,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef unsigned long t_ulong;
+typedef unsigned long t_uintptr;
+typedef unsigned int t_uint;
+
 #endif
