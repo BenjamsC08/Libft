@@ -5,28 +5,31 @@ SRCC = srcs/lists/ft_lstadd_front.c srcs/lists/ft_lstnew.c srcs/lists/ft_lstiter
 OBJ = $(SRCC:srcs/%.c=$(OBJ_DIR)/%.o)
 NAME = libft.a
 INCLUDE = includes/
+VALID = \033[1;32m
+NOTVALID = \033[1;31m
+LOADING = \033[0;33m
+
 
 # Créer le dossier OBJ et ses sous-dossiers si nécessaire
 $(shell mkdir -p $(OBJ_DIR) $(dir $(OBJ)))
 
 all: $(NAME)
-	@echo "\033[0;33m - libft: all \t\t\t✅"
 
 $(NAME): $(OBJ)
-	@printf "\n\033[0;35m - libft: compilation terminée \t✅\n"
+	@printf "\n$(VALID) - libft: compilation succeed \t✅\n"
 	@ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: srcs/%.c $(INCLUDE)
-	@printf "\r\033[0;35m - libft: compilation \t\t🔃 "
+	@printf "\r$(LOADING) - libft: compilation \t\t🔃 "
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@ > /dev/null 2>&1
 
 clean:
 	@rm -rf $(OBJ_DIR)/$(OBJ)
-	@echo "\033[0;33m - libft: clean \t\t✅"
+	@echo "$(VALID) - libft: clean \t\t✅"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[0;33m - libft: fclean \t\t✅"
+	@echo "$(VALID) - libft: fclean \t\t✅"
 
 re: fclean all
 
