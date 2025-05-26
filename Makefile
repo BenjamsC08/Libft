@@ -10,18 +10,23 @@ INCLUDE = includes/
 $(shell mkdir -p $(OBJ_DIR) $(dir $(OBJ)))
 
 all: $(NAME)
+	@echo "\033[0;33m - libft: all \t\t\t✅"
 
 $(NAME): $(OBJ)
-	ar rcs $@ $^
+	@printf "\n\033[0;35m - libft: compilation terminée \t✅\n"
+	@ar rcs $@ $^
 
 $(OBJ_DIR)/%.o: srcs/%.c $(INCLUDE)
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	@printf "\r\033[0;35m - libft: compilation \t\t🔃 "
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@ > /dev/null 2>&1
 
 clean:
-	rm -rf $(OBJ_DIR)/$(OBJ)
+	@rm -rf $(OBJ_DIR)/$(OBJ)
+	@echo "\033[0;33m - libft: clean \t\t✅"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[0;33m - libft: fclean \t\t✅"
 
 re: fclean all
 
