@@ -17,6 +17,7 @@ char	*ft_cut(char from, char *str, int l)
 	char	*d;
 	int		i;
 
+	i = 0;
 	if (l > (int)ft_strlen(str))
 		return (free(str), malloc(0));
 	d = ft_calloc(sizeof(char), (ft_strlen(str) - l) + 1);
