@@ -1,3 +1,6 @@
 *.out
 *.a
 *.o
+libft
+prog
+
