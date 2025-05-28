@@ -2,7 +2,7 @@
 
 int	is_in_charset(char c, const char *charset)
 {
-	char	cs;
+	char	*cs;
 
 	cs = (char *)charset - 1;
 	while (*(++cs))
@@ -13,19 +13,21 @@ int	is_in_charset(char c, const char *charset)
 	return (0);
 }
 
-char *remove_charset(char *str, const char *charset)
+char *ft_remove_charset(char *str, const char *charset)
 {
 	char	*dest;
 	char	*d;
 
+	ft_printf("DEBUG STR CHARSET : %s\n", str);
 	dest = ft_calloc(sizeof(char), ft_strlen(str) + 1);
 	if (!dest)
 		return (NULL);
 	d = dest;
 	while (*str)
 	{
-		if (!is_in_charset(*str, charset)
+		if (!is_in_charset(*str, charset))
 			*(d++) = *str;
 		str++;
 	}
+	return (dest);
 }
