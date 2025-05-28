@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:42:49 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/13 10:11:50 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/05/28 04:40:14 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ char	*ft_strfjoin(char *src, char *dest)
 	char	*s_1;
 	char	*s_2;
 
-	new = (char *)ft_calloc((ft_strlen(src) + ft_strlen(dest) + 1), sizeof(char));
+	new = (char *)ft_calloc((ft_strlen(src) + ft_strlen(dest) + 1),
+			sizeof(char));
 	if (!new)
 		return (0);
 	out = new;

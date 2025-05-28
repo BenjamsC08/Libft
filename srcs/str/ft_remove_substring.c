@@ -1,6 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_remove_substring.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 04:39:38 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/05/28 04:39:41 by benjamsc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_remove_substring(char *str, const char *sub)
+static char	*end_copy(char *str, char length, char **ptr_d, char **dest)
+{
+	char	*d;
+
+	d = *ptr_d;
+	while (*(str + length))
+		*(d++) = *(str++);
+	return (*dest);
+}
+
+char	*ft_remove_substring(char *str, const char *sub)
 {
 	char	*dest;
 	char	*cr;
@@ -19,19 +41,10 @@ char *ft_remove_substring(char *str, const char *sub)
 	{
 		while (str != s)
 			*(d++) = *(str++);
-		if (s[ft_strlen(cr)])
-		{
-			s = ft_strstr((s + ft_strlen(cr)) , cr);
-			if (!s)
-			{
-				while(*(str + ft_strlen(cr)))
-					*(d++) = *(str++);
-				return (dest);
-			}
-			str += ft_strlen(cr);
-		}
-		else
-			return (dest);
+		s = ft_strstr((s + ft_strlen(cr)), cr);
+		if (!s)
+			return (end_copy(str, ft_strlen(cr), &d, &dest));
+		str += ft_strlen(cr);
 	}
 	return (dest);
 }

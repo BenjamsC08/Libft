@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 20:40:44 by benjamsc          #+#    #+#             */
-/*   Updated: 2024/11/11 21:32:20 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/05/28 04:38:47 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ void	*ft_memchr(const void *addr, int c, size_t n)
 	}
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 02:12:12 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/03/29 17:42:40 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/05/28 04:38:34 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@
 
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	void				*content;
+	struct s_list		*next;
+}						t_list;
 
-typedef unsigned long t_ulong;
-typedef unsigned long t_uintptr;
-typedef unsigned int t_uint;
+typedef unsigned long	t_ulong;
+typedef unsigned long	t_uintptr;
+typedef unsigned int	t_uint;
 
 #endif

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_remove_charset.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 04:39:27 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/05/28 04:39:27 by benjamsc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	is_in_charset(char c, const char *charset)
@@ -13,7 +25,7 @@ int	is_in_charset(char c, const char *charset)
 	return (0);
 }
 
-char *ft_remove_charset(char *str, const char *charset)
+char	*ft_remove_charset(char *str, const char *charset)
 {
 	char	*dest;
 	char	*d;
