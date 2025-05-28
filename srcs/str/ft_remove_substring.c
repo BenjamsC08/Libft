@@ -17,7 +17,8 @@ static char	*end_copy(char *str, char length, char **ptr_d, char **dest)
 	char	*d;
 
 	d = *ptr_d;
-	while (*(str + length))
+	str += length;
+	while (*str)
 		*(d++) = *(str++);
 	return (*dest);
 }
