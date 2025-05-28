@@ -30,7 +30,6 @@ char	*ft_remove_charset(char *str, const char *charset)
 	char	*dest;
 	char	*d;
 
-	ft_printf("DEBUG STR CHARSET : %s\n", str);
 	dest = ft_calloc(sizeof(char), ft_strlen(str) + 1);
 	if (!dest)
 		return (NULL);
