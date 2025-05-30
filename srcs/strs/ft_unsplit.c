@@ -23,7 +23,7 @@ char	*ft_unsplit(char **strs, char c)
 	sep = ft_calloc(sizeof(char), 2);
 	if (!sep)
 		return (NULL);
-	sep[0] = c;
+	sep[0] = (char)c;
 	s = ft_strdup(strs[0]);
 	if (!s)
 		return (free(sep), NULL);
@@ -51,7 +51,7 @@ static char	*join_help(char *s, char *sep, char *end)
 	return (s);
 }
 
-char	*ft_unsplit_skip(char **strs, char c, int k)
+char	*ft_unsplit_skip(char **strs, const char c, int k)
 {
 	static int	i = 0;
 	char		*s;
@@ -62,7 +62,7 @@ char	*ft_unsplit_skip(char **strs, char c, int k)
 	sep = ft_calloc(sizeof(char), 2);
 	if (!sep)
 		return (NULL);
-	sep[0] = c;
+	sep[0] = (char) c;
 	if (k == 0)
 		i++;
 	s = ft_strdup(strs[i]);
