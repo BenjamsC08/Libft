@@ -30,11 +30,10 @@ char	*ft_cut(char from, char *str, int l)
 	}
 	else if (from == END)
 	{
-		l = ft_strlen(str) - l;
-		while ((++i) < l)
-			d[i] = str[i];
+		l = ft_strlen(str) - l - 1;
+		while (l >= 0)
+			d[i++] = str[l--];
 	}
-	free(str);
 	return (d);
 }
 /*
