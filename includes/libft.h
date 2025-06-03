@@ -54,6 +54,7 @@ int				ft_iswhitespace(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_ishex(char c);
+int				ft_ischarset(char c, char *charset);
 /*
  *			string verification
  */
@@ -64,6 +65,7 @@ int				ft_only_digit(char *str);
 int				ft_only_print(char *str);
 int				ft_only_whitespace(char *str);
 int				ft_onlyhex(char *str);
+int				ft_only_charset(char *str, const char *charset);
 /*
  *			string manip ajouter strsiteri
  */
