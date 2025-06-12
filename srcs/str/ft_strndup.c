@@ -20,3 +20,4 @@ char	*ft_strndup(const char *s, t_uint n)
 		n--;
 	}
 	return (src);
+}
