@@ -54,6 +54,7 @@ int				ft_iswhitespace(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_ishex(char c);
+int				ft_ischarset(char c, char *charset);
 /*
  *			string verification
  */
@@ -64,6 +65,7 @@ int				ft_only_digit(char *str);
 int				ft_only_print(char *str);
 int				ft_only_whitespace(char *str);
 int				ft_onlyhex(char *str);
+int				ft_only_charset(char *str, const char *charset);
 /*
  *			string manip ajouter strsiteri
  */
@@ -77,7 +79,7 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t siz);
 int				ft_atoi(const char *nptr);
 double			ft_atol(const char *nptr);
 char			*ft_strdup(const char *s);
-char			*ft_strndup(const char *s, int n);
+char			*ft_strndup(const char *s, t_uint n);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strfjoin(char *src, char *dest);

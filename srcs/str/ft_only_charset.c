@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iswhitespace.c                                  :+:      :+:    :+:   */
+/*   ft_only_charset.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moa <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/04 07:09:50 by moa               #+#    #+#             */
-/*   Updated: 2025/03/04 09:02:36 by benjamsc         ###   ########.fr       */
+/*   Created: 2024/11/11 21:09:37 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/06/04 00:55:14 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iswhitespace(int c)
+#include "libft.h"
+
+int	ft_only_charset(char *str, const char *charset)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	return (0);
+	while (*str)
+	{
+		if (!ft_ischarset(*str, (char *)charset))
+			return (0);
+		str++;
+	}
+	return (1);
 }
