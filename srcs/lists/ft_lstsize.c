@@ -26,3 +26,18 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+int	ft_dlstsize(t_dlist *lst)
+{
+	int		i;
+	t_dlist	*current;
+
+	current = lst;
+	i = 0;
+	while (current != NULL)
+	{
+		i++;
+		current = current->next;
+	}
+	return (i);
+}

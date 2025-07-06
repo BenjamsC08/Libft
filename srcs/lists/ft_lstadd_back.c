@@ -21,3 +21,19 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;
 }
+
+void	ft_dlstadd_back(t_dlist **lst, t_dlist *new)
+{
+	if (! lst || ! new)
+		return ;
+	if (*lst)
+	{
+		new->prev = ft_dlstlast(*lst);
+		ft_dlstlast(*lst)->next = new;
+	}
+	else
+	{
+		*lst = new;
+		(*lst)->prev = NULL;
+	}
+}

@@ -33,11 +33,21 @@
 # define START 'S'
 # define END 'E'
 
+# define SIMPLE 's'
+# define DOUBLE 'd'
+
 typedef struct s_list
 {
 	void				*content;
 	struct s_list		*next;
 }						t_list;
+
+typedef struct s_dlist
+{
+	void			*content;
+	struct s_dlist	*next;
+	struct s_dlist	*prev;
+}					t_dlist;
 
 typedef unsigned long	t_ulong;
 typedef unsigned long	t_uintptr;

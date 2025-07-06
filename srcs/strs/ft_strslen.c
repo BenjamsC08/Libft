@@ -23,3 +23,22 @@ int	ft_strslen(char **strs)
 		j++;
 	return (j);
 }
+
+int	ft_strs_char_count(char **strs)
+{
+	int	j;
+	int	i;
+
+	if (!strs || !*strs)
+		return (0);
+	j = 0;
+	while (strs[j])
+	{
+		i = 0;
+		while (strs[j][i])
+			i++;
+		j++;
+	}
+	return (i);
+
+}

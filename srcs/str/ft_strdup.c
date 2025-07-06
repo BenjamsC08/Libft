@@ -29,3 +29,22 @@ char	*ft_strdup(const char *s)
 		*(str++) = *(s++);
 	return (src);
 }
+
+char	*ft_strldup(const char *s, size_t size)
+{
+	char	*str;
+	char	*src;
+
+	if (ft_strlen(s) < size)
+		size = ft_strlen(s);
+	str = (char *)ft_calloc((size + 1), sizeof(char));
+	if (!str)
+		return (0);
+	src = str;
+	while (*s && size > 0)
+	{
+		*(str++) = *(s++);
+		size--;
+	}
+	return (src);
+}

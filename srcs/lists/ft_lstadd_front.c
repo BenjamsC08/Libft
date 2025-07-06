@@ -25,3 +25,18 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+void	ft_dlstadd_front(t_dlist **lst, t_dlist *new)
+{
+	if (! new)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		new->next = NULL;
+		return ;
+	}
+	new->next = *lst;
+	(*lst)->prev = new;
+	*lst = new;
+}

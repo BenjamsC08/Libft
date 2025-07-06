@@ -26,3 +26,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
+
+void	ft_dlstclear(t_dlist **lst, void (*del)(void *))
+{
+	t_list	*current;
+	t_list	*last;
+
+	current = *lst;
+	while (current != NULL)
+	{
+		last = current;
+		current = current->next;
+		ft_dlstdelone(last, del);
+	}
+	*lst = NULL;
+}

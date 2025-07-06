@@ -39,3 +39,31 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new);
 }
+
+t_list	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_dlist	*new;
+	t_dlist	*act;
+	t_dlist	*tmp;
+
+	if (!lst || !f)
+		return (0);
+	new = ft_dlstnew(f(lst->content));
+	if (!new)
+		return (0);
+	act = new;
+	lst = lst->next;
+	while (lst)
+	{
+		tmp = ft_dlstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_dlstclear(&new, del);
+			return (0);
+		}
+		act->next = tmp;
+		act = tmp;
+		lst = lst->next;
+	}
+	return (new);
+}

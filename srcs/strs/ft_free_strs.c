@@ -19,7 +19,10 @@ void	free_strs(char **strs)
 	i = 0;
 	if (!strs)
 		return ;
+	if (!*strs)
+		return (free(strs));
 	while (strs[i] != NULL)
 		free(strs[i++]);
 	free(strs);
+	strs = NULL;
 }
