@@ -40,7 +40,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new);
 }
 
-t_list	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *))
+t_dlist	*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_dlist	*new;
 	t_dlist	*act;
