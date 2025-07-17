@@ -18,25 +18,25 @@ static int	parse_format(int fd, va_list list, char type)
 
 	len = 0;
 	if (type == 'c')
-		len += ft_put_char_int_fd(fd, va_arg(list, int));
+		len += ft_putchar_fd(fd, va_arg(list, int));
 	if (type == 's')
-		len += ft_put_str_int_fd(fd, va_arg(list, char *));
+		len += ft_putstr_fd(fd, va_arg(list, char *));
 	if (type == 'p')
-		len += ft_put_ptr_int_fd(fd, va_arg(list, unsigned long));
+		len += ft_putptr_int_fd(fd, va_arg(list, unsigned long));
 	if (type == 'd' || type == 'i')
-		len += ft_put_nbr_int_fd(fd, va_arg(list, int));
+		len += ft_putnbr_fd(fd, va_arg(list, int));
 	if (type == 'u')
-		len += ft_put_uint_int_fd(fd, va_arg(list, unsigned int));
+		len += ft_putuint_fd(fd, va_arg(list, unsigned int));
 	if (type == 'x' || type == 'X')
-		len += ft_put_hex_int_fd(fd, va_arg(list, unsigned int), type);
+		len += ft_puthex_fd(fd, va_arg(list, unsigned int), type);
 	if (type == 'l')
-		len += ft_put_long_int_fd(fd, va_arg(list, long int));
+		len += ft_putlong_fd(fd, va_arg(list, long int));
 	if (type == '%')
-		len += ft_put_char_int_fd(fd, '%');
+		len += ft_putchar_fd(fd, '%');
 	return (len);
 }
 
-int	ft_fprintf(int fd, const char *str, ...)
+int	ft_dprintf(int fd, const char *str, ...)
 {
 	va_list	list;
 	int		length;
@@ -52,7 +52,7 @@ int	ft_fprintf(int fd, const char *str, ...)
 		if (*s == '%')
 			length += parse_format(fd, list, *(++s));
 		else
-			length += ft_put_char_int_fd(fd, *s);
+			length += ft_putchar_fd(fd, *s);
 	}
 	va_end(list);
 	return (length);

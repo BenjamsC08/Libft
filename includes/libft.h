@@ -15,12 +15,11 @@
 
 # include "ft_boolean.h"
 # include "ft_def.h"
-# include "ft_fprintf.h"
 # include "ft_limits.h"
-# include "ft_printf.h"
 # include "get_next_line.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 /*
  *			bit manip
@@ -88,6 +87,9 @@ char			*ft_remove_charset(char *str, const char *charset);
 char			*ft_remove_substring(char *str, const char *dest);
 /*int				ft_count_words(char *str, char c);*/
 char			*ft_itoa(int n);
+char			*ft_utoa(unsigned int n);
+char			*ft_xtoa(unsigned long nbr, char type);
+char			*ft_ltoa(long int n);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strstr(char *str, char *to_find);
 char			*ft_strcasestr(char *str, char *to_find);
@@ -126,6 +128,12 @@ int				ft_next_prime(int nb);
 int				ft_min(int nb1, int nb2);
 int				ft_max(int nb1, int nb2);
 /*
+ *			int size
+ */
+int				ft_intlen(unsigned int nb, char type);
+int				ft_lintlen(long unsigned int nb, char type);
+int				ft_xlen(unsigned long nbr);
+/*
  *			int tab manip
  */
 int				*ft_range(int min, int max);
@@ -133,12 +141,34 @@ int				*ft_rrange(int start, int end);
 int				*ft_mintab(int *tab, unsigned int size);
 int				*ft_maxtab(int *tab, unsigned int size);
 /*
- *			file manip
+ *			put func (return how much char was writen)
+ */
+int				ft_putchar(char c);
+int				ft_putstr(char *str);
+void			ft_putendl(char *s);
+int				ft_putnbr(int nb);
+int				ft_putuint(unsigned int nb);
+int				ft_puthex(unsigned int nbr, char type);
+int				ft_putptr(unsigned long nbr);
+int				ft_putlong(long int nb);
+
+/*
+ *			put in file descriptor or stream
  */
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+int				ft_putuint_fd(int fd, unsigned int nb);
+int				ft_puthex_fd(int fd, unsigned int nbr, char type);
+int				ft_putptr_fd(int fd, unsigned long nbr);
+int				ft_putlong_fd(int fd, long int nb);
+/*
+ *			FT_PRINTF et FT_DPRINTF
+ */
+int				ft_printf(const char *str, ...);
+int				ft_dprintf(int fd, const char *str, ...);
+
 /*
  *			list manip
  */
