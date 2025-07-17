@@ -8,11 +8,11 @@ int	ft_puthex(unsigned int nbr, char type)
 	int		len;
 
 	if (nbr == 0)
-		return (ft_put_char_int('0'));
+		return (ft_putchar('0'));
 	s1 = ft_xtoa(nbr, type);
 	s = s1;
 	if (nbr == 0)
-		return (ft_put_char_int('0'));
+		return (ft_putchar('0'));
 	while (*s1)
 		write(1, (s1++), 1);
 	len = ft_strlen(s);
@@ -20,18 +20,18 @@ int	ft_puthex(unsigned int nbr, char type)
 	return (len);
 }
 
-int	ft_put_hex_fd(int fd, unsigned int nbr, char type)
+int	ft_puthex_fd(int fd, unsigned int nbr, char type)
 {
 	char	*s;
 	char	*s1;
 	int		len;
 
 	if (nbr == 0)
-		return (ft_put_char_int_fd(fd, '0'));
+		return (ft_putchar_fd(fd, '0'));
 	s1 = ft_xtoa(nbr, type);
 	s = s1;
 	if (nbr == 0)
-		return (ft_put_char_int_fd(fd, '0'));
+		return (ft_putchar_fd(fd, '0'));
 	while (*s1)
 		write(1, (s1++), 1);
 	len = ft_strlen(s);

@@ -1,21 +1,19 @@
 #include "libft.h"
 
-void	ft_putendl_fd(char *s)
+int	ft_putendl(char *s)
 {
-	char	*s1;
+	int		len;
 
-	s1 = s - 1;
-	while (*(++s1))
-		write(1, s1, 1);
-	write(1, "\n", 1);
+	len = ft_putstr(s);
+	len += write(1, "\n", 1);
+	return (len);
 }
 
-void	ft_putendl_fd(char *s, int fd)
+int	ft_putendl_fd(int fd, char *s)
 {
-	char	*s1;
+	int		len;
 
-	s1 = s - 1;
-	while (*(++s1))
-		write(fd, s1, 1);
-	write(fd, "\n", 1);
+	len = ft_putstr_fd(fd, s);
+	len += write(fd, "\n", 1);
+	return (len);
 }

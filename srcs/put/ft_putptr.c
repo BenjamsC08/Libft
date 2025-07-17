@@ -8,7 +8,7 @@ int	ft_putptr(unsigned long nbr)
 	int		len;
 
 	if (nbr == 0)
-		return (ft_put_str_int("(nil)"));
+		return (ft_putstr("(nil)"));
 	s1 = ft_xtoa(nbr, 'x');
 	s = s1;
 	write(1, "0x", 2);
@@ -26,7 +26,7 @@ int	ft_putptr_fd(int fd, unsigned long nbr)
 	int		len;
 
 	if (nbr == 0)
-		return (ft_put_str_int_fd(fd, "(nil)"));
+		return (ft_putstr_fd(fd, "(nil)"));
 	s1 = ft_xtoa(nbr, 'x');
 	s = s1;
 	write(1, "0x", 2);

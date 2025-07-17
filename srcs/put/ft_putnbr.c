@@ -8,7 +8,7 @@ int	ft_putnbr(int nb)
 	int		len;
 
 	if (nb == 0)
-		return (ft_put_char_int('0'));
+		return (ft_putchar('0'));
 	s1 = ft_itoa(nb);
 	s = s1;
 	while (*s1)
@@ -25,7 +25,7 @@ int	ft_putnbr_fd(int fd, int nb)
 	int		len;
 
 	if (nb == 0)
-		return (ft_put_char_int_fd(fd, '0'));
+		return (ft_putchar_fd(fd, '0'));
 	s1 = ft_itoa(nb);
 	s = s1;
 	while (*s1)

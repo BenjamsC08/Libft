@@ -22,7 +22,7 @@ static int	parse_format(int fd, va_list list, char type)
 	if (type == 's')
 		len += ft_putstr_fd(fd, va_arg(list, char *));
 	if (type == 'p')
-		len += ft_putptr_int_fd(fd, va_arg(list, unsigned long));
+		len += ft_putptr_fd(fd, va_arg(list, unsigned long));
 	if (type == 'd' || type == 'i')
 		len += ft_putnbr_fd(fd, va_arg(list, int));
 	if (type == 'u')

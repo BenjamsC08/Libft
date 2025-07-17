@@ -6,7 +6,8 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(int fd, char c)
 {
 	write(fd, &c, 1);
+	return (1);
 }

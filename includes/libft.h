@@ -145,7 +145,7 @@ int				*ft_maxtab(int *tab, unsigned int size);
  */
 int				ft_putchar(char c);
 int				ft_putstr(char *str);
-void			ft_putendl(char *s);
+int				ft_putendl(char *s);
 int				ft_putnbr(int nb);
 int				ft_putuint(unsigned int nb);
 int				ft_puthex(unsigned int nbr, char type);
@@ -155,10 +155,10 @@ int				ft_putlong(long int nb);
 /*
  *			put in file descriptor or stream
  */
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
-void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+int				ft_putchar_fd(int fd, char c);
+int				ft_putstr_fd(int fd, char *s);
+int				ft_putendl_fd(int fd, char *s);
+int				ft_putnbr_fd(int fd, int n);
 int				ft_putuint_fd(int fd, unsigned int nb);
 int				ft_puthex_fd(int fd, unsigned int nbr, char type);
 int				ft_putptr_fd(int fd, unsigned long nbr);

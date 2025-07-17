@@ -8,7 +8,7 @@ int	ft_putlong(long int nb)
 	int		len;
 
 	if (nb == 0)
-		return (ft_put_char_int('0'));
+		return (ft_putchar('0'));
 	s1 = ft_ltoa(nb);
 	if (!s1)
 		return (0);
@@ -27,7 +27,7 @@ int	ft_put_long_fd(int fd, long int nb)
 	int		len;
 
 	if (nb == 0)
-		return (ft_put_char_int_fd(fd, '0'));
+		return (ft_putchar_fd(fd, '0'));
 	s1 = ft_ltoa(nb);
 	if (!s1)
 		return (0);
