@@ -19,7 +19,7 @@ char	*ft_xtoa(unsigned long nbr, char type)
 	int		len;
 
 	base = "0123456789abcdef";
-	if (type == 'X')
+	if (type == MAJ_HEX)
 		base = "0123456789ABCDEF";
 	len = ft_xlen(nbr);
 	str = (char *)ft_calloc(len + 1, sizeof(char));

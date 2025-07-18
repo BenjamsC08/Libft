@@ -36,6 +36,13 @@
 # define SIMPLE 's'
 # define DOUBLE 'd'
 
+# define STDIN 0
+# define STDOUT 1
+# define STDERR 2
+
+#define MAJ_HEX 'X'; 
+#define MIN_HEX 'x';
+
 typedef struct s_list
 {
 	void				*content;
