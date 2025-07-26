@@ -40,8 +40,8 @@
 # define STDOUT 1
 # define STDERR 2
 
-#define MAJ_HEX 'X'; 
-#define MIN_HEX 'x';
+#define MAJ_HEX 'X'
+#define MIN_HEX 'x'
 
 typedef struct s_list
 {
