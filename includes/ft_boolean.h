@@ -20,20 +20,5 @@
 # define FAILED 1
 
 typedef int				t_bool;
-typedef unsigned int	t_booltab;
-
-typedef struct s_boolarray
-{
-	t_booltab			*data;
-	unsigned int		bit_capacity;
-}						t_boolarray;
-
-/*enum*/
-/*{*/
-/*	FLAG_RUNNING = 0,*/
-/*	FLAG_PAUSED = 1,*/
-/*	FLAG_ERROR = 2,*/
-/*	FLAG_ACTIVE = 3*/
-/*};*/
 
 #endif

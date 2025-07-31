@@ -6,7 +6,7 @@ NAME = libft.a
 INCLUDE = includes/
 VALID = \033[1;32m
 NOTVALID = \033[1;31m
-LOADING = \033[5;33m
+LOADING = \033[1;33m
 
 all: $(NAME)
 
