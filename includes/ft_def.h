@@ -60,4 +60,6 @@ typedef unsigned long	t_ulong;
 typedef unsigned long	t_uintptr;
 typedef unsigned int	t_uint;
 
+typedef t_dlist			t_gc;
+
 #endif

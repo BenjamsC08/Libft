@@ -30,17 +30,6 @@ unsigned char	ft_swap_bits(unsigned char octet);
 unsigned int	ft_swap_octets(unsigned int octets);
 void			ft_print_bits(unsigned char octet);
 void			ft_print_octets(unsigned int octets);
-//		booltab and array whit an int
-void			bit_set(t_booltab *tab, unsigned int pos);
-void			bit_clear(t_booltab *tab, unsigned int pos);
-unsigned int	bit_get(t_booltab tab, unsigned int pos);
-void			bit_toggle(t_booltab *tab, unsigned int pos);
-void			ba_set(t_boolarray *arr, unsigned int pos);
-void			ba_clear(t_boolarray *arr, unsigned int pos);
-unsigned int	ba_get(t_boolarray arr, unsigned int pos);
-void			ba_toggle(t_boolarray *arr, unsigned int pos);
-t_boolarray		create_bool_array(unsigned int num_bits);
-void			free_bool_array(t_boolarray *arr);
 /*
  *			char verification
  */
@@ -182,6 +171,7 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)());
 // double list
 t_dlist			*ft_dlstnew(void *content);
 int				ft_dlstsize(t_dlist *lst);
@@ -192,5 +182,6 @@ t_dlist			*ft_dlstlast(t_dlist *lst);
 void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
 t_dlist			*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
 void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
+void			ft_dlstremove_if(t_dlist **head, void *ref, int (*cmp)());
 
 #endif
