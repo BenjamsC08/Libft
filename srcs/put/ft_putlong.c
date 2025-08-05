@@ -20,7 +20,7 @@ int	ft_putlong(long int nb)
 	return (len);
 }
 
-int	ft_put_long_fd(int fd, long int nb)
+int	ft_putlong_fd(int fd, long int nb)
 {
 	char	*s;
 	char	*s1;
