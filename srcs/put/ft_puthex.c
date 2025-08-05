@@ -33,7 +33,7 @@ int	ft_puthex_fd(int fd, unsigned int nbr, char type)
 	if (nbr == 0)
 		return (ft_putchar_fd(fd, '0'));
 	while (*s1)
-		write(1, (s1++), 1);
+		write(fd, (s1++), 1);
 	len = ft_strlen(s);
 	free(s);
 	return (len);

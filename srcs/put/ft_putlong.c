@@ -33,7 +33,7 @@ int	ft_putlong_fd(int fd, long int nb)
 		return (0);
 	s = s1;
 	while (*s1)
-		write(1, (s1++), 1);
+		write(fd, (s1++), 1);
 	len = ft_strlen(s);
 	free(s);
 	return (len);

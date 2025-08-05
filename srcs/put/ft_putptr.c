@@ -31,7 +31,7 @@ int	ft_putptr_fd(int fd, unsigned long nbr)
 	s = s1;
 	write(1, "0x", 2);
 	while (*s1)
-		write(1, (s1++), 1);
+		write(fd, (s1++), 1);
 	len = ft_strlen(s);
 	free(s);
 	return (len + 2);

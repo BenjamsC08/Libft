@@ -29,7 +29,7 @@ int	ft_putnbr_fd(int fd, int nb)
 	s1 = ft_itoa(nb);
 	s = s1;
 	while (*s1)
-		write(1, (s1++), 1);
+		write(fd, (s1++), 1);
 	len = ft_strlen(s);
 	free(s);
 	return (len);
