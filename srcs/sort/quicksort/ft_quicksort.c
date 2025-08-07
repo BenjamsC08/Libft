@@ -28,8 +28,8 @@ static void	sort(int *tab, int low, int high)
 	if (low < high)
 	{
 		pivot = pivoting_all(tab, low, high);
-		sort(tab, low, pi - 1);
-		sort(tab, pi + 1, high);
+		sort(tab, low, pivot - 1);
+		sort(tab, pivot + 1, high);
 	}
 }
 
