@@ -129,6 +129,8 @@ int				*ft_range(int min, int max);
 int				*ft_rrange(int start, int end);
 int				*ft_mintab(int *tab, unsigned int size);
 int				*ft_maxtab(int *tab, unsigned int size);
+void			ft_swap(int *a, int *b);
+void			ft_quicksort(int *tab, int length);
 /*
  *			put func (return how much char was writen)
  */
