@@ -173,7 +173,8 @@ void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)());
+// void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)());
+t_list			*ft_lstfind_middle(t_list **head);
 // double list
 t_dlist			*ft_dlstnew(void *content);
 int				ft_dlstsize(t_dlist *lst);
@@ -184,6 +185,7 @@ t_dlist			*ft_dlstlast(t_dlist *lst);
 void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
 t_dlist			*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
 void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
-void			ft_dlstremove_if(t_dlist **head, void *ref, int (*cmp)());
+// void			ft_dlstremove_if(t_dlist **head, void *ref, int (*cmp)());
+t_dlist			*ft_dlstfind_middle(t_dlist **head);
 
 #endif
