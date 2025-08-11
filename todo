@@ -1,2 +1,4 @@
 
 faire un script ou command makefile qui me donne les prototype grace au .h du nom de la fonction donne en argument
+
+peut etre changer un peu le gc dans le future et faire une fonction dump gc
