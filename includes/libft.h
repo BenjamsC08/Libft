@@ -188,4 +188,12 @@ void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
 // void			ft_dlstremove_if(t_dlist **head, void *ref, int (*cmp)());
 t_dlist			*ft_dlstfind_middle(t_dlist **head);
 
+/*
+ *			Garbage Collector
+*/
+t_gc	*init_gc();
+void	*ft_gcalloc(t_gc **head, t_uint size);
+void	*ft_gc_addnode(t_dlist **head, void *ptr);
+void	ft_clear_gc(t_gc **head);
+
 #endif
