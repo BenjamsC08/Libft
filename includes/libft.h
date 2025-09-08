@@ -22,7 +22,7 @@
 # include <stdarg.h>
 
 /*
- *			bit manip
+ *			bit manips
  */
 unsigned char	ft_reverse_bits(unsigned char octet);
 unsigned int	ft_reverse_octets(unsigned int octets);
