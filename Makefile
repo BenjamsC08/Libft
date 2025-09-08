@@ -19,10 +19,11 @@ $(NAME): $(OBJ)
 
 %.o: %.c $(INCLUDE)
 	@printf "\r$(LOADING) - libft: compilation \t\t🔃 "
-	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -MMD -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ_DIR)/$(OBJ)
+	@rm -rf $(OBJ_DIR)/$(OBJ) $(OBJ:.o=.d)
+	@rm -rf 
 	@echo "$(VALID) - libft: clean \t\t✅"
 
 fclean: clean
@@ -46,3 +47,5 @@ nbC:
 	@find -wholename "./srcs/*.c" | wc -l
 
 .PHONY: all clean fclean re cList nbC
+
+-include $(OBJ:.o=.d)
