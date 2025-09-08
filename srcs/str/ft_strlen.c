@@ -24,16 +24,20 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	ft_strlen_to(char *str, char c)
+int    ft_strlen_to(char *str, char c)
 {
-	int	i;
+    int    i;
 
-	if (!str || !*str)
-		return (0);
-	i = 0;
-	if (!*str)
-		return (0);
-	while (str[i] && str[i] != c)
-		i++;
-	return (i);
+    if (!str || !*str)
+        return (0);
+    i = 0;
+    if (!*str)
+        return (0);
+    while (str[i] != c)
+    {
+        if (!str[i])
+            return (0);
+        i++;
+    }
+    return (i);
 }
