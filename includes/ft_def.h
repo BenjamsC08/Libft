@@ -6,7 +6,7 @@
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 02:12:12 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/05/28 04:38:34 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/09/07 06:38:01 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,12 @@
 # define STDOUT 1
 # define STDERR 2
 
-#define MAJ_HEX 'X'
-#define MIN_HEX 'x'
+# define MAJ_HEX 'X'
+# define MIN_HEX 'x'
+
+# define PI 3.14159265359
+
+typedef unsigned char	t_byte;
 
 typedef struct s_list
 {

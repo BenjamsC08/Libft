@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_incharset.c                                  :+:      :+:    :+:   */
+/*   ft_freetabint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 21:09:37 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/06/04 00:55:23 by moa              ###   ########.fr       */
+/*   Created: 2025/09/07 06:43:41 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/09/07 06:43:50 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ischarset(char c, char *charset)
+void	ft_free_2d_int(int **tab, int y)
 {
-	while (*charset)
-	{
-		if (c == *charset)
-			return (1);
-		charset++;
-	}
-	return (0);
+	int	i;
+
+	i = -1;
+	while (++i < y && tab[i])
+		free(tab[i]);
+	free(tab);
 }

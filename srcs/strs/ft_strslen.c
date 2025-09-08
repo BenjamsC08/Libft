@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:54:37 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/01/13 16:57:55 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/09/07 06:48:49 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,4 @@ int	ft_strs_char_count(char **strs)
 		j++;
 	}
 	return (i);
-
 }

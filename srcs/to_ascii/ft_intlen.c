@@ -27,6 +27,8 @@ int	ft_intlen(unsigned int nb, char type)
 		i++;
 		nb /= 10;
 	}
+	if (i == 0)
+		++i;
 	return (i);
 }
 
@@ -45,5 +47,7 @@ int	ft_lintlen(long unsigned int nb, char type)
 		i++;
 		nb /= 10;
 	}
+	if (i == 0)
+		++i;
 	return (i);
 }

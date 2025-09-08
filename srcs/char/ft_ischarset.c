@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_is_incharset.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 06:46:58 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/09/07 06:46:58 by benjamsc         ###   ########.fr       */
+/*   Created: 2024/11/11 21:09:37 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/06/04 00:55:23 by moa              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putendl(char *s)
+int	ft_ischarset(char c, const char *charset)
 {
-	int		len;
-
-	len = ft_putstr(s);
-	len += write(1, "\n", 1);
-	return (len);
-}
-
-int	ft_putendl_fd(int fd, char *s)
-{
-	int		len;
-
-	len = ft_putstr_fd(fd, s);
-	len += write(fd, "\n", 1);
-	return (len);
+	while (*charset)
+	{
+		if (c == *charset)
+			return (1);
+		charset++;
+	}
+	return (0);
 }

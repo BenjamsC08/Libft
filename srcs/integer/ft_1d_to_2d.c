@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_1d_to_2d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/07 06:46:58 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/09/07 06:46:58 by benjamsc         ###   ########.fr       */
+/*   Created: 2025/09/07 06:41:00 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/09/07 06:43:32 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putendl(char *s)
+int	**ft_1d_to_2d_int(t_gc **gc, const int *tab, int rows, int cols)
 {
-	int		len;
+	int	**out;
+	int	i;
+	int	j;
 
-	len = ft_putstr(s);
-	len += write(1, "\n", 1);
-	return (len);
-}
-
-int	ft_putendl_fd(int fd, char *s)
-{
-	int		len;
-
-	len = ft_putstr_fd(fd, s);
-	len += write(fd, "\n", 1);
-	return (len);
+	out = ft_gcalloc(gc, sizeof(int *) * rows);
+	if (!out)
+		return (NULL);
+	i = -1;
+	while (++i < rows)
+	{
+		out[i] = ft_gcalloc(gc, sizeof(int) * cols);
+		if (!out[i])
+			return (NULL);
+		j = -1;
+		while (++j < cols)
+			out[i][j] = tab[i * cols + j];
+	}
+	return (out);
 }

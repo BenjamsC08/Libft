@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_quicksort.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: benjamsc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/07 06:47:42 by benjamsc          #+#    #+#             */
+/*   Updated: 2025/09/07 06:47:52 by benjamsc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	pivoting_all(int *tab, int low, int high)
 {
 	int	pivot;
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	pivot = tab[high];
 	i = low - 1;

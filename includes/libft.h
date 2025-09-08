@@ -6,7 +6,7 @@
 /*   By: benjamsc <benjamsc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:55:24 by benjamsc          #+#    #+#             */
-/*   Updated: 2025/04/15 08:06:13 by benjamsc         ###   ########.fr       */
+/*   Updated: 2025/09/07 06:39:03 by benjamsc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int				ft_iswhitespace(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_ishex(char c);
-int				ft_ischarset(char c, char *charset);
+int				ft_ischarset(char c, const char *charset);
 /*
  *			string verification
  */
@@ -60,6 +60,7 @@ int				ft_only_charset(char *str, const char *charset);
 size_t			ft_strlen(const char *str);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
+int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 size_t			ft_strlcat(char *dst, const char *src, size_t siz);
@@ -97,7 +98,7 @@ char			*ft_unsplit_skip(char **strs, char c, int k);
 void			free_strs(char **strs);
 char			**ft_strsfadd(char **src, char *add);
 char			**ft_strsfjoin(char **s1, char **s2);
-void			print_strs(char **strs);
+void			ft_print_strs(char **strs);
 /*
  *			memory manip
  */
@@ -131,6 +132,8 @@ int				*ft_mintab(int *tab, unsigned int size);
 int				*ft_maxtab(int *tab, unsigned int size);
 void			ft_swap(int *a, int *b);
 void			ft_quicksort(int *tab, int length);
+void			ft_free_2d_int(int **tab, int y);
+
 /*
  *			put func (return how much char was writen)
  */
@@ -172,7 +175,8 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 // void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)());
 t_list			*ft_lstfind_middle(t_list **head);
 // double list
@@ -183,7 +187,8 @@ void			ft_dlstadd_front(t_dlist **lst, t_dlist *new);
 void			ft_dlstdelone(t_dlist *lst, void (*del)(void *));
 t_dlist			*ft_dlstlast(t_dlist *lst);
 void			ft_dlstclear(t_dlist **lst, void (*del)(void *));
-t_dlist			*ft_dlstmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *));
+t_dlist			*ft_dlstmap(t_dlist *lst, void *(*f)(void *),
+					void (*del)(void *));
 void			ft_dlstiter(t_dlist *lst, void (*f)(void *));
 // void			ft_dlstremove_if(t_dlist **head, void *ref, int (*cmp)());
 t_dlist			*ft_dlstfind_middle(t_dlist **head);
@@ -191,9 +196,12 @@ t_dlist			*ft_dlstfind_middle(t_dlist **head);
 /*
  *			Garbage Collector
 */
-t_gc	*init_gc();
-void	*ft_gcalloc(t_gc **head, t_uint size);
-void	*ft_gc_addnode(t_dlist **head, void *ptr);
-void	ft_clear_gc(t_gc **head);
+t_gc			*init_gc(void);
+void			*ft_gcalloc(t_gc **head, t_uint size);
+void			*ft_gc_addnode(t_dlist **head, void *ptr);
+void			ft_clear_gc(t_gc **head);
+char			**ft_add_strs_gc(t_gc **head, char **strs);
 
+int				**ft_1d_to_2d_int(t_gc **gc, const int *tab,
+					int rows, int cols);
 #endif
