@@ -1,7 +1,9 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g3
-SRCC = srcs/bits/ft_print_bits.c srcs/bits/ft_reverse_bits.c srcs/bits/ft_swap_bits.c srcs/char/ft_isalnum.c srcs/char/ft_isalpha.c srcs/char/ft_isascii.c srcs/char/ft_ischarset.c srcs/char/ft_isdigit.c srcs/char/ft_ishex.c srcs/char/ft_isprint.c srcs/char/ft_iswhitespace.c srcs/char/ft_tolower.c srcs/char/ft_toupper.c srcs/garbage_coll/ft_gc.c srcs/gnl/get_next_line.c srcs/gnl/get_next_line_free.c srcs/gnl/get_next_line_utils.c srcs/integer/ft_1d_to_2d.c srcs/integer/ft_abs.c srcs/integer/ft_atoi.c srcs/integer/ft_atol.c srcs/integer/ft_freetabint.c srcs/integer/ft_isprime.c srcs/integer/ft_min_max.c srcs/integer/ft_range.c srcs/integer/ft_rrange.c srcs/integer/ft_swap.c srcs/lists/ft_lstadd_back.c srcs/lists/ft_lstadd_front.c srcs/lists/ft_lstclear.c srcs/lists/ft_lstdelone.c srcs/lists/ft_lstfind_middle.c srcs/lists/ft_lstiter.c srcs/lists/ft_lstlast.c srcs/lists/ft_lstmap.c srcs/lists/ft_lstnew.c srcs/lists/ft_lstremove_if.c srcs/lists/ft_lstsize.c srcs/memory/ft_bzero.c srcs/memory/ft_calloc.c srcs/memory/ft_memchr.c srcs/memory/ft_memcmp.c srcs/memory/ft_memcpy.c srcs/memory/ft_memmove.c srcs/memory/ft_memset.c srcs/printf/ft_dprintf.c srcs/printf/ft_printf.c srcs/put/ft_putchar.c srcs/put/ft_putendl.c srcs/put/ft_puthex.c srcs/put/ft_putlong.c srcs/put/ft_putnbr.c srcs/put/ft_putptr.c srcs/put/ft_putstr.c srcs/put/ft_putuint.c srcs/sort/quicksort/ft_quicksort.c srcs/str/ft_only_alnum.c srcs/str/ft_only_alpha.c srcs/str/ft_only_ascii.c srcs/str/ft_only_charset.c srcs/str/ft_only_digit.c srcs/str/ft_only_print.c srcs/str/ft_only_whitespace.c srcs/str/ft_onlyhex.c srcs/str/ft_remove_charset.c srcs/str/ft_remove_substring.c srcs/str/ft_str_add_char.c srcs/str/ft_str_cut.c srcs/str/ft_strcasestr.c srcs/str/ft_strchr.c srcs/str/ft_strdup.c srcs/str/ft_striteri.c srcs/str/ft_strjoin.c srcs/str/ft_strlcat.c srcs/str/ft_strlcpy.c srcs/str/ft_strmapi.c srcs/str/ft_strncmp.c srcs/str/ft_strndup.c srcs/str/ft_strnstr.c srcs/str/ft_strrchr.c srcs/str/ft_strrev.c srcs/str/ft_strstr.c srcs/str/ft_strtrim.c srcs/str/ft_substr.c srcs/str/ft_strlen.c srcs/strs/ft_free_strs.c srcs/strs/ft_print_strs.c srcs/strs/ft_split.c srcs/strs/ft_strsdup.c srcs/strs/ft_strsjoin.c srcs/strs/ft_strslen.c srcs/strs/ft_unsplit.c srcs/to_ascii/ft_intlen.c srcs/to_ascii/ft_itoa.c srcs/to_ascii/ft_ltoa.c srcs/to_ascii/ft_utoa.c srcs/to_ascii/ft_xlen.c srcs/to_ascii/ft_xtoa.c
-OBJ = $(SRCC:.c=.o)
+OBJDIR = obj
+SRCDIR = srcs
+SRCC = bits/ft_print_bits.c bits/ft_reverse_bits.c bits/ft_swap_bits.c char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c char/ft_ischarset.c char/ft_isdigit.c char/ft_ishex.c char/ft_isprint.c char/ft_iswhitespace.c char/ft_tolower.c char/ft_toupper.c garbage_coll/ft_gc.c gnl/get_next_line.c gnl/get_next_line_free.c gnl/get_next_line_utils.c integer/ft_1d_to_2d.c integer/ft_abs.c integer/ft_atoi.c integer/ft_atol.c integer/ft_freetabint.c integer/ft_isprime.c integer/ft_min_max.c integer/ft_range.c integer/ft_rrange.c integer/ft_swap.c lists/ft_lstadd_back.c lists/ft_lstadd_front.c lists/ft_lstclear.c lists/ft_lstdelone.c lists/ft_lstfind_middle.c lists/ft_lstiter.c lists/ft_lstlast.c lists/ft_lstmap.c lists/ft_lstnew.c lists/ft_lstremove_if.c lists/ft_lstsize.c memory/ft_bzero.c memory/ft_calloc.c memory/ft_memchr.c memory/ft_memcmp.c memory/ft_memcpy.c memory/ft_memmove.c memory/ft_memset.c printf/ft_dprintf.c printf/ft_printf.c put/ft_putchar.c put/ft_putendl.c put/ft_puthex.c put/ft_putlong.c put/ft_putnbr.c put/ft_putptr.c put/ft_putstr.c put/ft_putuint.c sort/quicksort/ft_quicksort.c str/ft_only_alnum.c str/ft_only_alpha.c str/ft_only_ascii.c str/ft_only_charset.c str/ft_only_digit.c str/ft_only_print.c str/ft_only_whitespace.c str/ft_onlyhex.c str/ft_remove_charset.c str/ft_remove_substring.c str/ft_str_add_char.c str/ft_str_cut.c str/ft_strcasestr.c str/ft_strchr.c str/ft_strdup.c str/ft_striteri.c str/ft_strjoin.c str/ft_strlcat.c str/ft_strlcpy.c str/ft_strlen.c str/ft_strmapi.c str/ft_strncmp.c str/ft_strndup.c str/ft_strnstr.c str/ft_strrchr.c str/ft_strrev.c str/ft_strstr.c str/ft_strtrim.c str/ft_substr.c strs/ft_free_strs.c strs/ft_print_strs.c strs/ft_split.c strs/ft_strsdup.c strs/ft_strsjoin.c strs/ft_strslen.c strs/ft_unsplit.c to_ascii/ft_intlen.c to_ascii/ft_itoa.c to_ascii/ft_ltoa.c to_ascii/ft_utoa.c to_ascii/ft_xlen.c to_ascii/ft_xtoa.c
+OBJ = $(addprefix $(OBJDIR)/,$(SRCC:.c=.o))
 NAME = libft.a
 INCLUDE = includes/
 VALID = \033[1;32m
@@ -14,9 +16,11 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@printf "\n$(VALID) - libft: compilation succeed \t✅\n$(RESET)"
+	@echo "$(INFOS)Flags:$(CFLAGS)\ninclude:$(INCLUDE)\nObj:$(OBJ)\nlib:$(NAME)$(RESET)\n"
 	@ar rcs $@ $^
 
-%.o: %.c $(INCLUDE)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(@D)
 	@printf "\r$(LOADING) - libft: compilation \t\t🔃$(RESET)"
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -MMD -c $< -o $@
 
@@ -25,21 +29,21 @@ clean:
 	@echo "$(LOADING) - libft: clean \t\t🆑$(RESET)"
 
 fclean: clean
+	@rm -rf $(OBJDIR)
 	@rm -f $(NAME)
 	@echo "$(NOTVALID) - libft: fclean \t\t🆑$(RESET)"
 
 re: fclean all
 
-
 listC:
-	@LIST=$$(find -wholename "./srcs/*.c" | cut -c 3- | tr '\n' ' '); \
+	@LIST=$$(find -wholename "./$(SRCDIR)/*.c" | sed 's|$(SRCDIR)/||' | cut -c 3- | tr '\n' ' '); \
 	printf "🗅 $(INFOS)copy all C sources files into clipboard :\n$(RESET)$$LIST\n"; \
-	echo -n $$LIST | xclip -selection clipboard; \
+	echo $$LIST | xclip -selection clipboard
 
 listNb:
-	@echo "Number of .c files :" 
-	@find -wholename "./srcs/*.c" | wc -l
+	@echo "Number of .c files :"
+	@find -wholename "./$(SRCDIR)/*.c" | wc -l
 
-.PHONY: all clean fclean re cList nbC
+.PHONY: all clean fclean re listC listNb
 
 -include $(OBJ:.o=.d)

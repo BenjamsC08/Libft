@@ -1,10 +1,12 @@
 CC = cc
 NAME = 
-SRCC =
+SRCC = 
 EXT =
-INCLUDE = includes/
-CFLAGS = -Wall -Wextra -Werror -g3 -o3
-OBJ = $(SRCC:.c=.o)
+OBJDIR = 
+SRCDIR = 
+CFLAGS = -Wall -Wextra -Werror -g3
+
+OBJ = $(addprefix $(OBJDIR)/,$(SRCC:.c=.o))
 GREEN = \033[1;32m
 RED = \033[1;31m
 BLUE = \033[1;36m
@@ -17,7 +19,7 @@ $(NAME): $(OBJ)
 	@printf "\n$(GREEN) - $(NAME): compilation succeed \t✅\n$(RESET)"
 	@ar rcs $@ $^
 
-%.o: %.c $(INCLUDE)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@printf "\r$(ORANGE) - $(NAME): compilation \t\t🔃$(RESET)"
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -MMD -c $< -o $@
 
@@ -26,16 +28,15 @@ clean:
 	@echo "$(ORANGE) - $(NAME): clean \t\t🆑$(RESET)"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME) $(OBJDIR)
 	@echo "$(RED) - $(NAME): fclean \t\t🆑$(RESET)"
 
 re: fclean all
 
 
 listExt:
-	@LIST=$$(find -wholename "./srcs/*.$(EXT)" | cut -c 3- | tr '\n' ' '); \
-	printf "🗅 $(BLUE)copy all $(EXT) sources files into clipboard :\n$(RESET)$$LIST\n"; \
-	echo ;\
+	@LIST=$$(find -wholename "./$(SRCDIR)/*.$(EXT)" | sed 's|$(SRCDIR)/||' | cut -c 3- | tr '\n' ' '); \
+	printf "🗅 $(BLUE)copy all $(.EXT) sources files into clipboard :\n$(RESET)$$LIST\n"; \
 	echo -n $$LIST | xclip -selection clipboard; \
 
 NbExt:
