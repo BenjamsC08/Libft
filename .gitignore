@@ -3,5 +3,6 @@
 *.o
 *.d
 libft
+libft/*
 prog
 
