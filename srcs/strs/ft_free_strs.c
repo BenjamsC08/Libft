@@ -26,3 +26,17 @@ void	free_strs(char **strs)
 	free(strs);
 	strs = NULL;
 }
+
+void	ft_free_instrs(char **tab)
+{
+	int	i;
+
+	if (!tab || !(*tab))
+		return ;
+	i = -1;
+	while (tab[++i])
+	{
+		free(tab[i]);
+		tab[i] = NULL;
+	}
+}

@@ -96,6 +96,7 @@ char			**ft_split(const char *str, char c);
 char			*ft_unsplit(char **strs, char c);
 char			*ft_unsplit_skip(char **strs, char c, int k);
 void			free_strs(char **strs);
+void			ft_free_instrs(char **tab);
 char			**ft_strsfadd(char **src, char *add);
 char			**ft_strsfjoin(char **s1, char **s2);
 void			ft_print_strs(char **strs);
