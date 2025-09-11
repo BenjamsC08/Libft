@@ -39,6 +39,10 @@ listC:
 	echo ;\
 	echo $$LIST | xclip -selection clipboard; \
 
+listNb:
+	@echo "Number of .c files :" 
+	@find -wholename "./srcs/*.c" | wc -l
+
 
 cList:
 	@find -wholename "./srcs/*.c" | cut -c 3- | tr '\n' ' '
