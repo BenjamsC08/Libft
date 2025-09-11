@@ -27,6 +27,6 @@ int		found_newline(char *str);
 
 char	*get_next_line(int fd);
 
-char	*get_next_line_free(int fd, int end);
+void	close_gnl(int fd);
 
 #endif
