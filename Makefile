@@ -22,7 +22,6 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -rf $(OBJ) $(OBJ:.o=.d)
-	@rm -rf 
 	@echo "$(VALID) - libft: clean \t\t✅"
 
 fclean: clean
@@ -35,18 +34,10 @@ re: fclean all
 listC:
 	@LIST=$$(find -wholename "./srcs/*.c" | cut -c 3- | tr '\n' ' '); \
 	printf "🗅 $(INFOS)copy all C sources files into clipboard :\n$(RESET)$$LIST\n"; \
-	echo ;\
-	echo $$LIST | xclip -selection clipboard; \
+	echo -n $$LIST | xclip -selection clipboard; \
 
 listNb:
 	@echo "Number of .c files :" 
-	@find -wholename "./srcs/*.c" | wc -l
-
-
-cList:
-	@find -wholename "./srcs/*.c" | cut -c 3- | tr '\n' ' '
-
-nbC:
 	@find -wholename "./srcs/*.c" | wc -l
 
 .PHONY: all clean fclean re cList nbC
