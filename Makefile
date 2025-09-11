@@ -13,20 +13,20 @@ RESET = \033[0m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@printf "\n$(VALID) - libft: compilation succeed \t✅\n"
+	@printf "\n$(VALID) - libft: compilation succeed \t✅\n$(RESET)"
 	@ar rcs $@ $^
 
 %.o: %.c $(INCLUDE)
-	@printf "\r$(LOADING) - libft: compilation \t\t🔃 "
+	@printf "\r$(LOADING) - libft: compilation \t\t🔃$(RESET)"
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -MMD -c $< -o $@
 
 clean:
 	@rm -rf $(OBJ) $(OBJ:.o=.d)
-	@echo "$(VALID) - libft: clean \t\t✅"
+	@echo "$(LOADING) - libft: clean \t\t🆑$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(VALID) - libft: fclean \t\t✅"
+	@echo "$(NOTVALID) - libft: fclean \t\t🆑$(RESET)"
 
 re: fclean all
 
