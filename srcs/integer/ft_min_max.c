@@ -32,6 +32,8 @@ int	*ft_mintab(int *tab, unsigned int size)
 	int				out;
 	int				temp;
 
+	if (!size || !tab)
+		return (NULL);
 	i = -1;
 	temp = INT_MAX;
 	out = 0;
@@ -52,6 +54,9 @@ int	*ft_maxtab(int *tab, unsigned int size)
 	int				out;
 	int				temp;
 
+	if (!size || !tab)
+		return (NULL);
+	out = 0;
 	i = -1;
 	temp = INT_MIN;
 	while (++i < size)

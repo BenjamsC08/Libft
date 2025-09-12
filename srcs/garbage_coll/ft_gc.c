@@ -69,7 +69,8 @@ char	**ft_add_strs_gc(t_gc **head, char **strs)
 		ft_gc_addnode(head, *strs);
 		strs++;
 	}
-	ft_gc_addnode(head, ptr_strs);
+	if (!ft_gc_addnode(head, ptr_strs))
+		return (NULL);
 	return (ptr_strs);
 }
 
