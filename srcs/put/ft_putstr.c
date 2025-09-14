@@ -29,6 +29,8 @@ int	ft_putstr_fd(int fd, char *s)
 	char	*s1;
 	int		len;
 
+	if (!s)
+		return (ft_putstr_fd(fd, "(null)"));
 	len = 0;
 	s1 = s - 1;
 	while (*(++s1))
