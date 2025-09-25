@@ -87,6 +87,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strrev(char *str);
 char			*ft_cut(char from, char *str, int l);
+void			ft_lowerise(char **ptr_s);
 /*
  *			tab string manip
  */
