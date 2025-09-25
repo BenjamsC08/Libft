@@ -180,6 +180,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 // void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)());
 t_list			*ft_lstfind_middle(t_list **head);
+t_list			*lst_merge_sort(t_list *head, int (*compare)(void *, void *));
 // double list
 t_dlist			*ft_dlstnew(void *content);
 int				ft_dlstsize(t_dlist *lst);
