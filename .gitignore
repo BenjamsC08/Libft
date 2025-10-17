@@ -6,3 +6,5 @@ libft
 libft/*
 prog
 obj/
+.cache
+*.json
