@@ -21,19 +21,3 @@ unsigned char	ft_swap_bits(unsigned char octet)
 	ah = octet << 4;
 	return (ah + al);
 }
-
-unsigned int	ft_swap_octets(unsigned int octets)
-{
-	unsigned int	result;
-	unsigned char	current;
-	int				i;
-
-	result = 0;
-	i = -1;
-	while (++i < 4)
-	{
-		current = (octets >> (8 * i)) & 0xFF;
-		result |= (unsigned int)current << (8 * (3 - i));
-	}
-	return (result);
-}

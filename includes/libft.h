@@ -24,12 +24,24 @@
 /*
  *			bit manips
  */
-unsigned char	ft_reverse_bits(unsigned char octet);
-unsigned int	ft_reverse_octets(unsigned int octets);
 unsigned char	ft_swap_bits(unsigned char octet);
-unsigned int	ft_swap_octets(unsigned int octets);
-void			ft_print_bits(unsigned char octet);
-void			ft_print_octets(unsigned int octets);
+t_uint			ft_reverse_bits(t_uint octets);
+void			ft_print_bits(t_uint octets);
+
+// operand
+int	nand(int a, int b);
+
+// setters
+void	turn_off_bit(int *ptr, int pos);
+void	turn_off_bits(int *ptr, int start_pos, int length);
+void	turn_on_bit(int *ptr, int pos);
+void	turn_on_bits(int *ptr, int start_pos, int length);
+
+// getters
+int	get_bit(int value, int pos);
+int	get_bit_value(int value, int pos);
+int	get_bits(int value, int pos, int length);
+
 /*
  *			char verification
  */

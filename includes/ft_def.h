@@ -45,7 +45,6 @@
 
 # define PI 3.14159265359
 
-typedef unsigned char	t_byte;
 
 typedef struct s_list
 {
@@ -60,6 +59,7 @@ typedef struct s_dlist
 	struct s_dlist	*prev;
 }					t_dlist;
 
+typedef unsigned char	t_byte;
 typedef unsigned long	t_ulong;
 typedef unsigned long	t_uintptr;
 typedef unsigned int	t_uint;

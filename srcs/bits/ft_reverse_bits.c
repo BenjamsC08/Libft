@@ -12,36 +12,18 @@
 
 #include "libft.h"
 
-unsigned char	ft_reverse_bits(unsigned char octet)
+t_uint	ft_reverse_bits(t_uint octets)
 {
-	int				i;
-	unsigned char	tmp;
+	t_ulong	i;
+	t_uint	tmp;
 
 	i = -1;
 	tmp = 0;
-	while (++i < 8)
+	while (++i < sizeof(octets) * 8)
 	{
 		tmp <<= 1;
-		tmp |= (octet & 1);
-		octet >>= 1;
+		tmp |= (octets & 1);
+		octets >>= 1;
 	}
 	return (tmp);
-}
-
-unsigned int	ft_reverse_octets(unsigned int octets)
-{
-	unsigned int	result;
-	unsigned char	current;
-	unsigned char	reversed;
-	int				i;
-
-	result = 0;
-	i = -1;
-	while (++i < 4)
-	{
-		current = (octets >> (8 * i)) & 0xFF;
-		reversed = ft_reverse_bits(current);
-		result |= (unsigned int)reversed << (8 * (3 - i));
-	}
-	return (result);
 }
