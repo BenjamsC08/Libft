@@ -12,57 +12,30 @@
 
 #include "libft.h"
 
-void	ft_lstremove_if(t_list **head, void *ref, int (*cmp)())
+void	ft_lstremove_if(t_list **head, void *ref, int (*cmp)(void *, void *, size_t), void (*del)(void *))
 {
 	t_list	*tmp;
-	t_list	*i;
+	t_list	*curr;
 
 	while (*head && !cmp((*head)->content, ref, sizeof(void *)))
 	{
 		tmp = *head;
 		*head = (*head)->next;
-		free(tmp);
+		ft_lstdelone(tmp, del); 
 	}
-	i = *head;
-	while (i && i->next)
+	curr = *head;
+	while (curr && curr->next)
 	{
-		if (!cmp(i->next->content, ref, sizeof(void *)))
+		if (!cmp(curr->next->content, ref, sizeof(void *)))
 		{
-			tmp = i->next;
-			i->next = tmp->next;
+			tmp = curr->next;
+			curr->next = tmp->next;
+			del(tmp->content);
 			free(tmp);
 		}
-		if (i->next)
-			i = i->next;
+		else
+		{
+			curr = curr->next;
+		}
 	}
 }
-// void	ft_dlstremove_if(t_dlist **head, void *ref, int (*cmp)())
-// {
-// 	t_dlist	*tmp;
-// 	t_dlist	*i;
-//
-// 	while (*head && !cmp((*head)->content, ref, sizeof(void *)))
-// 	{
-// 		tmp = *head;
-// 		*head = (*head)->next;
-// 		if (*head)
-// 			(*head)->prev = NULL;
-// 		free(tmp->content);
-// 		free(tmp);
-// 	}
-// 	i = *head;
-// 	while (i && i->next)
-// 	{
-// 		if (!cmp(i->next->content, ref, sizeof(void *)))
-// 		{
-// 			tmp = i->next;
-// 			i->next = tmp->next;
-// 			if (tmp->next)
-// 				tmp->next->prev = i;
-// 			free(tmp->content);
-// 			free(tmp);
-// 		}
-// 		else
-// 			i = i->next;
-// 	}
-// }

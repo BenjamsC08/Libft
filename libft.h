@@ -401,7 +401,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
-// void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)());
+void			ft_lstremove_if(t_list **head, void *ref, int (*cmp)(void *, void *, size_t), void (*del)(void *));
 t_list			*ft_lstfind_middle(t_list **head);
 t_list			*lst_merge_sort(t_list *head, int (*compare)(void *, void *));
 // double list
