@@ -29,8 +29,8 @@ clean:
 	@echo "$(LOADING) - libft: clean \t\t🆑$(RESET)"
 
 fclean: clean
-	@rm -rf $(OBJDIR)
-	@rm -f $(NAME)
+	@rm -rf $(OBJDIR) .cache
+	@rm -f $(NAME) compile_commands.json
 	@echo "$(NOTVALID) - libft: fclean \t\t🆑$(RESET)"
 
 re: fclean all
